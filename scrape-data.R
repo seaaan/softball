@@ -54,7 +54,12 @@ all <- all %>%
     filter(!is.na(TeamOneScore))
 
 # rearrange columns
-game_data <- all %>% 
+all <- all %>% 
     select(Year, Season, Week, Time, Field, everything())
 
-write.csv(game_data, file = "data/game-data.csv", row.names = FALSE)
+# clean up names
+clean_names <- function(n) n %>% str_replace("- Indy.*", "") %>% str_trim() %>% str_to_title()
+all <- all %>% 
+    mutate(TeamOne = clean_names(TeamOne), TeamTwo = clean_names(TeamTwo))
+
+write.csv(all, file = "data/game-data.csv", row.names = FALSE)
