@@ -18,10 +18,7 @@ determine_outcome <- function(x, y) {
 }
 
 input <- game_data %>% 
-    mutate(Season = recode(Season, "Spring" = 1, "Summer" = 2, Fall = 3),
-        Time = factor(Time)) %>% 
-    # create data represented by numeric
-    transmute(Date = 100*Year + 10*Season + Week + 0.1*as.numeric(Time), 
+    transmute(Date = as.numeric(lubridate::ymd_hms(Date)), 
         TeamOne = TeamOne, TeamTwo = TeamTwo, 
         Outcome = determine_outcome(TeamOneScore, TeamTwoScore))
         
@@ -32,14 +29,18 @@ history <- s$history %>%
     t() %>% 
     as.data.frame() %>% 
     gather(Team, Rating) %>% 
-    mutate(Time = rep(1:303, 80))
+    mutate(Time = rep(unique(game_data$Date), nrow(s$history)), 
+        Time = lubridate::ymd_hms(Time))
+
+seasons <- game_data %>% 
+    group_by(Season, Year) %>% 
+    summarise(Time = lubridate::ymd_hms(min(Date)))
 
 history %>% 
     filter(Team %in% c("Stranger Danger", "Sluggernauts",
-        "Balls Deep", "Hitmen", "Afternoon Delight")) %>%
-    ggplot(aes(x = Time, y = Rating, color = Team)) + geom_line() +
-     scale_color_brewer(type = "qual", palette = 2) 
-
-# need to combine: 
-
+        "Balls Deep", "Hitmen", "Flesh Eating Sharks")) %>%
+    ggplot(aes(x = Time, y = Rating, color = Team)) + 
+        geom_step() +
+#        geom_vline(xintercept = as.numeric(seasons$Time), color = "black") + 
+        scale_color_brewer(type = "qual", palette = 2)
 
