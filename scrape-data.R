@@ -58,7 +58,17 @@ all <- all %>%
     select(Year, Season, Week, Time, Field, everything())
 
 # clean up names
-clean_names <- function(n) n %>% str_replace("- Indy.*", "") %>% str_trim() %>% str_to_title()
+clean_names <- function(n) n %>% str_replace("- Indy.*", "") %>% str_trim() %>% str_to_title() %>% combine_duplicates()
+combine_duplicates <- function(n) {
+    # note: Son of Pitches and Sons of Pitches are *not* the same
+    n %>% 
+        # reddit team
+        str_replace("\\/R\\/Seattle", "#Blessed") %>% 
+        str_replace("Upvotes", "#Blessed") %>% 
+        # oregon sucks
+        str_replace("Oregon Sucks$", "Oregon Sucks!")
+}
+
 all <- all %>% 
     mutate(TeamOne = clean_names(TeamOne), TeamTwo = clean_names(TeamTwo))
 

@@ -4,7 +4,7 @@
 "2013","Fall",1,"1:30 PM"," Lower Woodland PF
 					Field 3","Balls Deep","The Crows","11","8"
 "2013","Fall",1,"3:00 PM"," Lower Woodland PF
-					Field 3","Upvotes","The Crows","5","14"
+					Field 3","#Blessed","The Crows","5","14"
 "2013","Fall",1,"4:30 PM"," Lower Woodland PF
 					Field 3","They Might Be Giants","Chico's Bail Bonds","11","22"
 "2013","Fall",1,"6:00 PM"," Lower Woodland PF
@@ -26,9 +26,9 @@
 "2013","Fall",2,"3:00 PM"," Lower Woodland PF
 					Field 3","Stranger Danger","The Crows","7","6"
 "2013","Fall",2,"4:30 PM"," Lower Woodland PF
-					Field 3","Stranger Danger","Upvotes","9","16"
+					Field 3","Stranger Danger","#Blessed","9","16"
 "2013","Fall",2,"6:00 PM"," Lower Woodland PF
-					Field 3","Upvotes","Balls Deep","6","7"
+					Field 3","#Blessed","Balls Deep","6","7"
 "2013","Fall",2,"12:00 PM"," Lower Woodland PF
 					Field 6","Arbornauts","Chico's Bail Bonds","21","6"
 "2013","Fall",2,"1:30 PM"," Lower Woodland PF
@@ -50,7 +50,7 @@
 "2013","Fall",3,"6:00 PM"," Lower Woodland PF
 					Field 3","The Lemons","Slap My Pitch Up","9","19"
 "2013","Fall",3,"12:00 PM"," Lower Woodland PF
-					Field 6","Afternoon Delight","Upvotes","20","1"
+					Field 6","Afternoon Delight","#Blessed","20","1"
 "2013","Fall",3,"1:30 PM"," Lower Woodland PF
 					Field 6","The Crows","That's What She Said!!","5","20"
 "2013","Fall",3,"3:00 PM"," Lower Woodland PF
@@ -68,15 +68,15 @@
 "2013","Fall",4,"12:00 PM"," Lower Woodland PF
 					Field 6","They Might Be Giants","The Crows","21","5"
 "2013","Fall",4,"1:30 PM"," Lower Woodland PF
-					Field 6","Upvotes","They Might Be Giants","3","19"
+					Field 6","#Blessed","They Might Be Giants","3","19"
 "2013","Fall",4,"3:00 PM"," Lower Woodland PF
-					Field 6","The Lemons","Upvotes","8","1"
+					Field 6","The Lemons","#Blessed","8","1"
 "2013","Fall",6,"2:00 PM"," Lower Woodland PF
 					Field 3","Arbornauts","That's What She Said!!","12","13"
 "2013","Fall",6,"3:30 PM"," Lower Woodland PF
 					Field 3","That's What She Said!!","Afternoon Delight","13","11"
 "2013","Fall",6,"5:00 PM"," Lower Woodland PF
-					Field 3","Upvotes","The Crows","7","8"
+					Field 3","#Blessed","The Crows","7","8"
 "2013","Fall",6,"6:30 PM"," Lower Woodland PF
 					Field 3","The Crows","They Might Be Giants","14","8"
 "2013","Fall",6,"8:00 PM"," Lower Woodland PF
@@ -100,7 +100,7 @@
 "2013","Summer",1,"6:00 PM"," Greenlake
 					Field 1","Sluggernauts","Stranger Danger","26","10"
 "2013","Summer",1,"12:00 PM"," Greenlake
-					Field 2","/R/Seattle","Canlis","8","7"
+					Field 2","#Blessed","Canlis","8","7"
 "2013","Summer",1,"1:30 PM"," Greenlake
 					Field 2","Gomicroamadub","Booze On First","16","9"
 "2013","Summer",1,"3:00 PM"," Greenlake
@@ -114,7 +114,7 @@
 "2013","Summer",2,"1:30 PM"," Greenlake
 					Field 1","Here For The Beer","Sluggernauts","20","6"
 "2013","Summer",2,"3:00 PM"," Greenlake
-					Field 1","Randy's Johnson","/R/Seattle","9","9"
+					Field 1","Randy's Johnson","#Blessed","9","9"
 "2013","Summer",2,"4:30 PM"," Greenlake
 					Field 1","Randy's Johnson","Stranger Danger","15","12"
 "2013","Summer",2,"6:00 PM"," Greenlake
@@ -142,7 +142,7 @@
 "2013","Summer",3,"12:00 PM"," Greenlake
 					Field 2","Booze On First","Sluggernauts","11","14"
 "2013","Summer",3,"1:30 PM"," Greenlake
-					Field 2","/R/Seattle","Booze On First","13","8"
+					Field 2","#Blessed","Booze On First","13","8"
 "2013","Summer",3,"3:00 PM"," Greenlake
 					Field 2","Canlis","Off In The Corner","15","3"
 "2013","Summer",3,"4:30 PM"," Greenlake
@@ -154,7 +154,7 @@
 "2013","Summer",4,"1:30 PM"," Greenlake
 					Field 1","Booze On First","Randy's Johnson","26","11"
 "2013","Summer",4,"3:00 PM"," Greenlake
-					Field 1","Stranger Danger","/R/Seattle","15","24"
+					Field 1","Stranger Danger","#Blessed","15","24"
 "2013","Summer",4,"4:30 PM"," Greenlake
 					Field 1","Stranger Danger","Here For The Beer","3","8"
 "2013","Summer",4,"6:00 PM"," Greenlake
@@ -180,9 +180,9 @@
 "2013","Summer",5,"6:00 PM"," Greenlake
 					Field 1","Stranger Danger","Booze On First","8","28"
 "2013","Summer",5,"12:00 PM"," Greenlake
-					Field 2","/R/Seattle","Gomicroamadub","42","2"
+					Field 2","#Blessed","Gomicroamadub","42","2"
 "2013","Summer",5,"1:30 PM"," Greenlake
-					Field 2","/R/Seattle","Here For The Beer","6","7"
+					Field 2","#Blessed","Here For The Beer","6","7"
 "2013","Summer",5,"3:00 PM"," Greenlake
 					Field 2","Here For The Beer","Canlis","5","4"
 "2013","Summer",5,"4:30 PM"," Greenlake
@@ -196,7 +196,7 @@
 "2013","Summer",6,"3:00 PM"," Greenlake
 					Field 1","Canlis","Booze On First","27","0"
 "2013","Summer",6,"4:30 PM"," Greenlake
-					Field 1","Sluggernauts","/R/Seattle","7","33"
+					Field 1","Sluggernauts","#Blessed","7","33"
 "2013","Summer",6,"6:00 PM"," Greenlake
 					Field 1","Gomicroamadub","Here For The Beer","1","16"
 "2013","Summer",6,"12:00 PM"," Greenlake
@@ -212,7 +212,7 @@
 "2013","Summer",7,"3:00 PM"," Greenlake
 					Field 1","First World Problems","Karate Explosion","14","5"
 "2013","Summer",7,"4:30 PM"," Greenlake
-					Field 1","Gomicroamadub","/R/Seattle","7","25"
+					Field 1","Gomicroamadub","#Blessed","7","25"
 "2013","Summer",7,"6:00 PM"," Greenlake
 					Field 1","Fowl Balls","Your Mom Plays Softball","16","25"
 "2013","Summer",7,"12:00 PM"," Greenlake
@@ -234,7 +234,7 @@
 "2013","Summer",8,"6:00 PM"," Greenlake
 					Field 1","Afternoon Delight","Your Mom Plays Softball","9","17"
 "2013","Summer",8,"12:00 PM"," Greenlake
-					Field 2","Canlis","/R/Seattle","15","11"
+					Field 2","Canlis","#Blessed","15","11"
 "2014","Fall",1,"12:00 PM"," Lower Woodland PF
 					Field 3","Adversity Overcomers","Chico's Bail Bonds","18","11"
 "2014","Fall",1,"1:30 PM"," Lower Woodland PF
@@ -254,15 +254,15 @@
 "2014","Fall",1,"4:30 PM"," Lower Woodland PF
 					Field 6","I Like Big Bunts","The Crows","9","11"
 "2014","Fall",1,"6:00 PM"," Lower Woodland PF
-					Field 6","Find The Holes","Upvotes","15","6"
+					Field 6","Find The Holes","#Blessed","15","6"
 "2014","Fall",2,"12:00 PM"," Lower Woodland PF
 					Field 3","Arbornauts","They Might Be Giants","12","25"
 "2014","Fall",2,"1:30 PM"," Lower Woodland PF
 					Field 3","Arbornauts","Too Drunk To Score","10","10"
 "2014","Fall",2,"3:00 PM"," Lower Woodland PF
-					Field 3","Upvotes","I Like Big Bunts","17","18"
+					Field 3","#Blessed","I Like Big Bunts","17","18"
 "2014","Fall",2,"4:30 PM"," Lower Woodland PF
-					Field 3","Upvotes","Stranger Danger","19","11"
+					Field 3","#Blessed","Stranger Danger","19","11"
 "2014","Fall",2,"6:00 PM"," Lower Woodland PF
 					Field 3","Stranger Danger","The Crows","4","24"
 "2014","Fall",2,"12:00 PM"," Lower Woodland PF
@@ -284,7 +284,7 @@
 "2014","Fall",3,"4:30 PM"," Lower Woodland PF
 					Field 3","Find The Holes","The Crows","16","7"
 "2014","Fall",3,"6:00 PM"," Lower Woodland PF
-					Field 3","Upvotes","The Crows","14","10"
+					Field 3","#Blessed","The Crows","14","10"
 "2014","Fall",3,"12:00 PM"," Lower Woodland PF
 					Field 6","Chico's Bail Bonds","That's What She Said!!","6","12"
 "2014","Fall",3,"1:30 PM"," Lower Woodland PF
@@ -306,9 +306,9 @@
 "2014","Fall",4,"12:00 PM"," Lower Woodland PF
 					Field 6","The Crows","Too Drunk To Score","16","15"
 "2014","Fall",4,"1:30 PM"," Lower Woodland PF
-					Field 6","Upvotes","Belltown Pub","10","22"
+					Field 6","#Blessed","Belltown Pub","10","22"
 "2014","Fall",4,"3:00 PM"," Lower Woodland PF
-					Field 6","They Might Be Giants","Upvotes","20","9"
+					Field 6","They Might Be Giants","#Blessed","20","9"
 "2014","Fall",4,"4:30 PM"," Lower Woodland PF
 					Field 6","Rich And Jay's Love Children","They Might Be Giants","2","6"
 "2014","Fall",4,"6:00 PM"," Lower Woodland PF
@@ -318,7 +318,7 @@
 "2014","Fall",5,"1:30 PM"," Lower Woodland PF
 					Field 3","Find The Holes","Adversity Overcomers","1","17"
 "2014","Fall",5,"3:00 PM"," Lower Woodland PF
-					Field 3","Upvotes","Rich And Jay's Love Children","8","10"
+					Field 3","#Blessed","Rich And Jay's Love Children","8","10"
 "2014","Fall",5,"4:30 PM"," Lower Woodland PF
 					Field 3","Rich And Jay's Love Children","I Like Big Bunts","9","10"
 "2014","Fall",5,"6:00 PM"," Lower Woodland PF
@@ -334,7 +334,7 @@
 "2014","Fall",5,"6:00 PM"," Lower Woodland PF
 					Field 6","That's What She Said!!","Adversity Overcomers","20","17"
 "2014","Summer",1,"12:00 PM"," Greenlake
-					Field 1","Sluggernauts","Upvotes","16","16"
+					Field 1","Sluggernauts","#Blessed","16","16"
 "2014","Summer",1,"1:30 PM"," Greenlake
 					Field 1","Your Mom Plays Softball","Dirty Mike And The Boys","17","5"
 "2014","Summer",1,"3:00 PM"," Greenlake
@@ -350,19 +350,19 @@
 "2014","Summer",1,"4:30 PM"," Greenlake
 					Field 2","Afternoon Delight","Find The Holes","24","15"
 "2014","Summer",1,"6:00 PM"," Greenlake
-					Field 2","Oregon Sucks","Find The Holes","13","10"
+					Field 2","Oregon Sucks!","Find The Holes","13","10"
 "2014","Summer",2,"12:00 PM"," Greenlake
 					Field 1","Fowl Balls","Dirty Mike And The Boys","11","16"
 "2014","Summer",2,"1:30 PM"," Greenlake
 					Field 1","Son Of Pitches","Sluggernauts","1","30"
 "2014","Summer",2,"4:30 PM"," Greenlake
-					Field 1","Oregon Sucks","Afternoon Delight","10","8"
+					Field 1","Oregon Sucks!","Afternoon Delight","10","8"
 "2014","Summer",2,"6:00 PM"," Greenlake
-					Field 1","Your Mom Plays Softball","Oregon Sucks","19","5"
+					Field 1","Your Mom Plays Softball","Oregon Sucks!","19","5"
 "2014","Summer",2,"12:00 PM"," Greenlake
 					Field 2","No Glove, No Love","Sloppy Bunts","5","14"
 "2014","Summer",2,"1:30 PM"," Greenlake
-					Field 2","No Glove, No Love","Upvotes","6","11"
+					Field 2","No Glove, No Love","#Blessed","6","11"
 "2014","Summer",2,"3:00 PM"," Greenlake
 					Field 2","Gomicroamadub","Stranger Danger","13","10"
 "2014","Summer",2,"4:30 PM"," Greenlake
@@ -370,7 +370,7 @@
 "2014","Summer",2,"6:00 PM"," Greenlake
 					Field 2","Greenlake Jackals","Balls Deep","11","9"
 "2014","Summer",3,"12:00 PM"," Greenlake
-					Field 1","Upvotes","Balls Deep","13","22"
+					Field 1","#Blessed","Balls Deep","13","22"
 "2014","Summer",3,"3:00 PM"," Greenlake
 					Field 1","Gomicroamadub","Son Of Pitches","8","12"
 "2014","Summer",3,"4:30 PM"," Greenlake
@@ -386,7 +386,7 @@
 "2014","Summer",3,"4:30 PM"," Greenlake
 					Field 2","Dirty Mike And The Boys","Find The Holes","11","15"
 "2014","Summer",3,"6:00 PM"," Greenlake
-					Field 2","Oregon Sucks","Dirty Mike And The Boys","18","12"
+					Field 2","Oregon Sucks!","Dirty Mike And The Boys","18","12"
 "2014","Summer",4,"12:00 PM"," Greenlake
 					Field 1","Your Mom Plays Softball","Afternoon Delight","20","4"
 "2014","Summer",4,"1:30 PM"," Greenlake
@@ -394,9 +394,9 @@
 "2014","Summer",4,"3:00 PM"," Greenlake
 					Field 1","Fowl Balls","The Joel Duck Experience","32","5"
 "2014","Summer",4,"4:30 PM"," Greenlake
-					Field 1","The Joel Duck Experience","Upvotes","18","15"
+					Field 1","The Joel Duck Experience","#Blessed","18","15"
 "2014","Summer",4,"6:00 PM"," Greenlake
-					Field 1","Oregon Sucks","Here For The Beer","24","7"
+					Field 1","Oregon Sucks!","Here For The Beer","24","7"
 "2014","Summer",4,"1:30 PM"," Greenlake
 					Field 2","Sloppy Bunts","Son Of Pitches","19","16"
 "2014","Summer",4,"3:00 PM"," Greenlake
@@ -410,7 +410,7 @@
 "2014","Summer",5,"3:00 PM"," Greenlake
 					Field 1","No Glove, No Love","Gomicroamadub","8","10"
 "2014","Summer",5,"4:30 PM"," Greenlake
-					Field 1","Afternoon Delight","Upvotes","15","6"
+					Field 1","Afternoon Delight","#Blessed","15","6"
 "2014","Summer",5,"1:30 PM"," Greenlake
 					Field 2","Sluggernauts","Balls Deep","11","3"
 "2014","Summer",5,"3:00 PM"," Greenlake
@@ -426,7 +426,7 @@
 "2014","Summer",6,"4:30 PM"," Greenlake
 					Field 1","Stranger Danger","No Glove, No Love","5","10"
 "2014","Summer",6,"6:00 PM"," Greenlake
-					Field 1","Greenlake Jackals","Upvotes","16","19"
+					Field 1","Greenlake Jackals","#Blessed","16","19"
 "2014","Summer",6,"12:00 PM"," Greenlake
 					Field 2","Sloppy Bunts","Sluggernauts","11","26"
 "2014","Summer",6,"1:30 PM"," Greenlake
@@ -436,7 +436,7 @@
 "2014","Summer",6,"4:30 PM"," Greenlake
 					Field 2","Here For The Beer","Your Mom Plays Softball","15","16"
 "2014","Summer",6,"6:00 PM"," Greenlake
-					Field 2","Fowl Balls","Oregon Sucks","10","16"
+					Field 2","Fowl Balls","Oregon Sucks!","10","16"
 "2014","Summer",7,"12:00 PM"," Greenlake
 					Field 1","Son Of Pitches","Gomicroamadub","26","11"
 "2014","Summer",7,"1:30 PM"," Greenlake
@@ -446,13 +446,13 @@
 "2014","Summer",7,"4:30 PM"," Greenlake
 					Field 1","Here For The Beer","Fowl Balls","7","20"
 "2014","Summer",7,"6:00 PM"," Greenlake
-					Field 1","Dirty Mike And The Boys","Oregon Sucks","11","12"
+					Field 1","Dirty Mike And The Boys","Oregon Sucks!","11","12"
 "2014","Summer",7,"12:00 PM"," Greenlake
 					Field 2","Stranger Danger","Balls Deep","16","23"
 "2014","Summer",7,"1:30 PM"," Greenlake
 					Field 2","Balls Deep","Sluggernauts","11","26"
 "2014","Summer",7,"3:00 PM"," Greenlake
-					Field 2","No Glove, No Love","Upvotes","3","9"
+					Field 2","No Glove, No Love","#Blessed","3","9"
 "2014","Summer",7,"4:30 PM"," Greenlake
 					Field 2","The Joel Duck Experience","Sloppy Bunts","15","6"
 "2014","Summer",7,"6:00 PM"," Greenlake
@@ -460,11 +460,11 @@
 "2014","Summer",8,"12:00 PM"," Lower Woodland PF
 					Field 6","Son Of Pitches","Sluggernauts","9","24"
 "2014","Summer",8,"1:30 PM"," Lower Woodland PF
-					Field 6","Upvotes","Greenlake Jackals","7","24"
+					Field 6","#Blessed","Greenlake Jackals","7","24"
 "2014","Summer",8,"3:00 PM"," Lower Woodland PF
 					Field 6","Sluggernauts","Greenlake Jackals","12","7"
 "2014","Summer",8,"4:30 PM"," Lower Woodland PF
-					Field 6","Fowl Balls","Oregon Sucks","11","9"
+					Field 6","Fowl Balls","Oregon Sucks!","11","9"
 "2014","Summer",8,"6:00 PM"," Lower Woodland PF
 					Field 6","Fowl Balls","Your Mom Plays Softball","3","26"
 "2015","Summer",1,"12:00 PM"," Greenlake
@@ -710,7 +710,7 @@
 "2016","Spring",1,"4:30 PM"," Greenlake
 					Field 2","Pitch Slap","Thigh Power","6","17"
 "2016","Spring",1,"6:00 PM"," Greenlake
-					Field 2","Flesh-Eating Sharks","Oregon Sucks","11","5"
+					Field 2","Flesh-Eating Sharks","Oregon Sucks!","11","5"
 "2016","Spring",2,"12:00 PM"," Greenlake
 					Field 1","Flesh-Eating Sharks","No Pants Party","2","17"
 "2016","Spring",2,"1:30 PM"," Greenlake
@@ -720,7 +720,7 @@
 "2016","Spring",2,"4:30 PM"," Greenlake
 					Field 1","Rich And Jay's Love Children","#Blessed","16","6"
 "2016","Spring",2,"6:00 PM"," Greenlake
-					Field 1","Oregon Sucks","Look At This F$%@Ing Guy","9","13"
+					Field 1","Oregon Sucks!","Look At This F$%@Ing Guy","9","13"
 "2016","Spring",2,"12:00 PM"," Greenlake
 					Field 2","Stranger Danger","Balls Deep","15","22"
 "2016","Spring",2,"1:30 PM"," Greenlake
@@ -750,7 +750,7 @@
 "2016","Spring",3,"4:30 PM"," Greenlake
 					Field 2","Rich And Jay's Love Children","Thigh Power","14","24"
 "2016","Spring",3,"6:00 PM"," Greenlake
-					Field 2","Rich And Jay's Love Children","Oregon Sucks","24","16"
+					Field 2","Rich And Jay's Love Children","Oregon Sucks!","24","16"
 "2016","Spring",4,"12:00 PM"," Greenlake
 					Field 1","Pitches Be Trippin'","Balls Deep","18","12"
 "2016","Spring",4,"1:30 PM"," Greenlake
@@ -760,7 +760,7 @@
 "2016","Spring",4,"4:30 PM"," Greenlake
 					Field 1","Look At This F$%@Ing Guy","#Blessed","15","4"
 "2016","Spring",4,"6:00 PM"," Greenlake
-					Field 1","Oregon Sucks","Afternoon Delight","17","10"
+					Field 1","Oregon Sucks!","Afternoon Delight","17","10"
 "2016","Spring",4,"12:00 PM"," Greenlake
 					Field 2","Hit Long & Prosper","Pitch Slap","4","40"
 "2016","Spring",4,"1:30 PM"," Greenlake
@@ -778,9 +778,9 @@
 "2016","Spring",5,"3:00 PM"," Greenlake
 					Field 1","Pitches Be Trippin'","Pitch Slap","17","24"
 "2016","Spring",5,"4:30 PM"," Greenlake
-					Field 1","Oregon Sucks","No Pants Party","20","21"
+					Field 1","Oregon Sucks!","No Pants Party","20","21"
 "2016","Spring",5,"6:00 PM"," Greenlake
-					Field 1","Oregon Sucks","#Blessed","11","10"
+					Field 1","Oregon Sucks!","#Blessed","11","10"
 "2016","Spring",5,"12:00 PM"," Greenlake
 					Field 2","All About That Base","Pitchbook Panthers","11","7"
 "2016","Spring",5,"1:30 PM"," Greenlake
@@ -800,7 +800,7 @@
 "2016","Spring",6,"4:30 PM"," Greenlake
 					Field 1","No Pants Party","Thigh Power","18","5"
 "2016","Spring",6,"6:00 PM"," Greenlake
-					Field 1","Oregon Sucks","Thigh Power","17","11"
+					Field 1","Oregon Sucks!","Thigh Power","17","11"
 "2016","Spring",6,"12:00 PM"," Greenlake
 					Field 2","Pitches Be Trippin'","All About That Base","15","29"
 "2016","Spring",6,"1:30 PM"," Greenlake
@@ -816,7 +816,7 @@
 "2016","Spring",7,"1:30 PM"," Greenlake
 					Field 1","Pitches Be Trippin'","All About That Base","24","2"
 "2016","Spring",7,"3:00 PM"," Greenlake
-					Field 1","Oregon Sucks","Thigh Power","11","15"
+					Field 1","Oregon Sucks!","Thigh Power","11","15"
 "2016","Spring",7,"4:30 PM"," Greenlake
 					Field 1","Thigh Power","Look At This F$%@Ing Guy","9","5"
 "2016","Spring",7,"6:00 PM"," Greenlake
@@ -840,7 +840,7 @@
 "2016","Summer",1,"4:30 PM"," Greenlake
 					Field 1","Sluggernauts","Crabby Swingers","12","16"
 "2016","Summer",1,"6:00 PM"," Greenlake
-					Field 1","Belltown Pub","Oregon Sucks","14","15"
+					Field 1","Belltown Pub","Oregon Sucks!","14","15"
 "2016","Summer",1,"1:30 PM"," Greenlake
 					Field 2","Hitmen","Dingers","27","22"
 "2016","Summer",1,"3:00 PM"," Greenlake
@@ -854,9 +854,9 @@
 "2016","Summer",2,"3:00 PM"," Greenlake
 					Field 1","Dirty Mike And The Boys","99 First World Problems","9","8"
 "2016","Summer",2,"4:30 PM"," Greenlake
-					Field 1","Oregon Sucks","Mud Sharks","6","5"
+					Field 1","Oregon Sucks!","Mud Sharks","6","5"
 "2016","Summer",2,"6:00 PM"," Greenlake
-					Field 1","Oregon Sucks","Crabby Swingers","12","12"
+					Field 1","Oregon Sucks!","Crabby Swingers","12","12"
 "2016","Summer",2,"12:00 PM"," Greenlake
 					Field 2","Balls Deep","Sluggernauts","12","22"
 "2016","Summer",2,"1:30 PM"," Greenlake
@@ -890,7 +890,7 @@
 "2016","Summer",4,"1:30 PM"," Greenlake
 					Field 1","Crabby Swingers","Stranger Danger","21","0"
 "2016","Summer",4,"6:00 PM"," Greenlake
-					Field 1","Oregon Sucks","99 First World Problems","9","28"
+					Field 1","Oregon Sucks!","99 First World Problems","9","28"
 "2016","Summer",4,"12:00 PM"," Greenlake
 					Field 2","Sluggernauts","Hitmen","33","9"
 "2016","Summer",4,"1:30 PM"," Greenlake
@@ -910,7 +910,7 @@
 "2016","Summer",5,"4:30 PM"," Greenlake
 					Field 1","Sluggernauts","Mud Sharks","15","15"
 "2016","Summer",5,"6:00 PM"," Greenlake
-					Field 1","Sluggernauts","Oregon Sucks","6","20"
+					Field 1","Sluggernauts","Oregon Sucks!","6","20"
 "2016","Summer",5,"12:00 PM"," Greenlake
 					Field 2","The Participators","The Backdoor Sliders","11","18"
 "2016","Summer",5,"1:30 PM"," Greenlake
@@ -930,7 +930,7 @@
 "2016","Summer",6,"4:30 PM"," Greenlake
 					Field 1","Dirty Mike And The Boys","Mud Sharks","10","15"
 "2016","Summer",6,"6:00 PM"," Greenlake
-					Field 1","Dirty Mike And The Boys","Oregon Sucks","18","19"
+					Field 1","Dirty Mike And The Boys","Oregon Sucks!","18","19"
 "2016","Summer",6,"12:00 PM"," Greenlake
 					Field 2","The Participators","Dingers","15","9"
 "2016","Summer",6,"1:30 PM"," Greenlake
@@ -944,7 +944,7 @@
 "2016","Summer",7,"4:30 PM"," Greenlake
 					Field 1","Glazers","99 First World Problems","1","18"
 "2016","Summer",7,"6:00 PM"," Greenlake
-					Field 1","Dirty Mike And The Boys","Oregon Sucks","11","12"
+					Field 1","Dirty Mike And The Boys","Oregon Sucks!","11","12"
 "2016","Summer",7,"1:30 PM"," Greenlake
 					Field 2","Stranger Danger","Pinjers","15","21"
 "2016","Summer",7,"3:00 PM"," Greenlake
@@ -958,9 +958,9 @@
 "2016","Summer",8,"3:00 PM"," Greenlake
 					Field 1","Pinjers","The Participators","17","24"
 "2016","Summer",8,"4:30 PM"," Greenlake
-					Field 1","Oregon Sucks","Crabby Swingers","25","17"
+					Field 1","Oregon Sucks!","Crabby Swingers","25","17"
 "2016","Summer",8,"6:00 PM"," Greenlake
-					Field 1","Oregon Sucks","99 First World Problems","13","25"
+					Field 1","Oregon Sucks!","99 First World Problems","13","25"
 "2017","Spring",1,"12:00 PM"," Greenlake
 					Field 1","Balls Deep","Eagle Bait","4","8"
 "2017","Spring",1,"1:30 PM"," Greenlake
