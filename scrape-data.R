@@ -29,13 +29,21 @@ process_tables <- function(tables) {
 
 process_years <- function(files) {
     lapply(files, function(file) {
-        read_html(file) %>% 
+        scores <- read_html(file) %>% 
             html_nodes("table") %>%
             process_tables() %>% 
             mutate(Year = str_extract(file, "\\d\\d\\d\\d"), 
                 Season = str_extract(file, "-[:alpha:]*-")) %>% 
             mutate(Season = str_replace_all(Season, "-", ""), 
                 Season = str_to_title(Season))
+        weeks <- read_html(file) %>% 
+            html_nodes("h2") %>% 
+            str_extract("\".*\"") %>% 
+            str_replace_all("\"", "") %>% 
+            .[1:(length(.)-1)]
+        scores$Date <- lubridate::mdy(weeks[scores$Week])
+        scores$Date <- lubridate::ymd_hm(paste(scores$Date, scores$Time))
+        scores
     }) %>% 
         bind_rows()
 }
@@ -70,6 +78,8 @@ combine_duplicates <- function(n) {
 }
 
 all <- all %>% 
-    mutate(TeamOne = clean_names(TeamOne), TeamTwo = clean_names(TeamTwo))
+    mutate(TeamOne = clean_names(TeamOne), TeamTwo = clean_names(TeamTwo)) %>% 
+    mutate(Field = str_replace_all(Field, "\\t", ""), 
+        Field = str_replace(Field, "\\n", " "))
 
 write.csv(all, file = "data/game-data.csv", row.names = FALSE)
