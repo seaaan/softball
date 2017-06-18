@@ -80,7 +80,8 @@ combine_duplicates <- function(n) {
 all <- all %>% 
     mutate(TeamOne = clean_names(TeamOne), TeamTwo = clean_names(TeamTwo)) %>% 
     mutate(Field = str_replace_all(Field, "\\t", ""), 
-        Field = str_replace(Field, "\\n", " ")) 
+        Field = str_replace(Field, "\\n", " "), 
+        Field = str_trim(Field)) 
 
 # fix up dates
 all <- all %>% 
