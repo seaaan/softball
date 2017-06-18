@@ -1,8 +1,6 @@
 library(rvest)
-library(stringr)
-library(tidyr)
-library(dplyr)
-    
+source("helpers.R")
+
 # take an html_table containing a week's games and return it as a 
 # useful data frame
 process_table <- function(table, week) {

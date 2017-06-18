@@ -1,8 +1,5 @@
-library(dplyr)
 library(PlayerRatings)
-library(ggplot2)
-library(tidyr)
-
+source("helpers.R")
 
 # could I adjust weights to more heavily weight games from the current season?
 
@@ -10,7 +7,7 @@ library(tidyr)
 
 
 
-game_data <- read.csv("data/game-data.csv", stringsAsFactors = FALSE)
+game_data <- get_game_data()
 
 determine_outcome <- function(x, y) {
     z <- x-y

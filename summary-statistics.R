@@ -1,24 +1,5 @@
-data <- read.csv("data/game-data.csv")
-
-
-one <- data %>% 
-    mutate(Team = TeamOne, Opponent = TeamTwo, Score = TeamOneScore, 
-        OpponentScore = TeamTwoScore, 
-        Game = paste(Year, Season, Week, Time, Field, sep = "-")) %>% 
-    select(-TeamOne, -TeamTwo, -TeamOneScore, -TeamTwoScore)
-
-two <- data %>% 
-    mutate(Team = TeamTwo, Opponent = TeamOne, Score = TeamTwoScore, 
-        OpponentScore = TeamOneScore, 
-        Game = paste(Year, Season, Week, Time, Field, sep = "-")) %>% 
-    select(-TeamOne, -TeamTwo, -TeamOneScore, -TeamTwoScore)
-
-combined <- bind_rows(one, two)
-    
-combined$Outcome <- case_when(
-        combined$Score == combined$OpponentScore ~ "Tie", 
-        combined$Score > combined$OpponentScore ~ "Win", 
-        combined$Score < combined$OpponentScore ~ "Loss")
+source("helpers.R")
+combined <- get_tidy_game_data()
 
 all_time <- combined %>% 
     group_by(Team) %>% 
