@@ -86,6 +86,11 @@ all <- all %>%
     mutate(Season = factor(Season, levels = c("Spring", "Summer", "Fall"))) %>% 
     select(-Time)
 
+# correctly type scores
+all <- all %>% 
+    mutate(TeamOneScore = as.numeric(TeamOneScore), 
+        TeamTwoScore = as.numeric(TeamTwoScore))
+
 # rearrange columns
 all <- all %>% 
     select(Year, Season, Week, Date, Field, everything())
