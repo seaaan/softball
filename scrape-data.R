@@ -3,6 +3,8 @@ library(stringr)
 library(tidyr)
 library(dplyr)
     
+# take an html_table containing a week's games and return it as a 
+# useful data frame
 process_table <- function(table, week) {
     table %>% 
         # give name to first column
@@ -21,12 +23,14 @@ process_table <- function(table, week) {
         select(-Game)
 }
 
+# process a bunch of week's games and return a combined data frame
 process_tables <- function(tables) {
     lapply(1:(length(tables)-1), 
         function(i) process_table(html_table(tables[[i]]), i)) %>% 
     bind_rows()
 }
 
+# process a whole season
 process_years <- function(files) {
     lapply(files, function(file) {
         scores <- read_html(file) %>% 
@@ -61,10 +65,6 @@ all <- files %>%
 all <- all %>% 
     filter(!is.na(TeamOneScore))
 
-# rearrange columns
-all <- all %>% 
-    select(Year, Season, Week, Time, Field, everything())
-
 # clean up names
 clean_names <- function(n) n %>% str_replace("- Indy.*", "") %>% str_trim() %>% str_to_title() %>% combine_duplicates()
 combine_duplicates <- function(n) {
@@ -80,6 +80,17 @@ combine_duplicates <- function(n) {
 all <- all %>% 
     mutate(TeamOne = clean_names(TeamOne), TeamTwo = clean_names(TeamTwo)) %>% 
     mutate(Field = str_replace_all(Field, "\\t", ""), 
-        Field = str_replace(Field, "\\n", " "))
+        Field = str_replace(Field, "\\n", " ")) 
 
+# fix up dates
+all <- all %>% 
+    mutate(Season = factor(Season, levels = c("Spring", "Summer", "Fall"))) %>% 
+    select(-Time)
+
+# rearrange columns
+all <- all %>% 
+    select(Year, Season, Week, Date, Field, everything())
+
+game_data <- all
 write.csv(all, file = "data/game-data.csv", row.names = FALSE)
+save(game_data, file = "data/game-data.Rda")
