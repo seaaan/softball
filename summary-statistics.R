@@ -7,7 +7,8 @@ combined <- get_tidy_game_data()
 all_time <- combined %>% 
     group_by(Team) %>% 
     summarise(Win = sum(Outcome == "Win"), Tie = sum(Outcome == "Tie"), 
-        Loss = sum(Outcome == "Loss"), n = n(), pct = Win / n) %>% 
+        Loss = sum(Outcome == "Loss"), Margin = mean(Score - OpponentScore), 
+        MeanScore = mean(Score), Score = sum(Score), n = n(), pct = Win / n) %>% 
     arrange(desc(n))
 
 all_time %>% 
@@ -18,6 +19,12 @@ all_time %>%
         facet_wrap(~ n > 20) + 
         ggtitle("All time winning pct by teams with 20 or more games")
 
+all_time %>% 
+    ggplot(aes(x = Score, y = n)) + 
+    geom_point(aes(color = Team == "Stranger Danger")) + 
+    stat_smooth(method = "lm") + 
+    ggtitle("Correlation between number of games and mean margin")
+    
 # ----------------------------------------------------------------------------
 # score-level summaries ------------------------------------------------------
 # ----------------------------------------------------------------------------
@@ -158,3 +165,4 @@ ggplot(seasonal_record, aes(x = paste(Year, Season), y = Record, color = Highlig
     geom_line(aes(group = Team)) + 
     # color by Set1 palette except for "other" teams, which should be grey
     scale_color_manual(values = c(scale_color_brewer(palette = "Set1")$palette(length(highlight_teams)), "grey80")) +
+    ggtitle("Seasonal record") + gghlab::tilt_x_labels()
