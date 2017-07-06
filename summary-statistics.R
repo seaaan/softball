@@ -109,3 +109,52 @@ selected_teams("pct") +
 
 selected_teams("margin") + 
     ggtitle("Average margin by season for\nteams with more than 3 seasons")
+
+# ---------------------------------------------------------------------------
+# game-level summaries ----------------------------------------------------
+# ---------------------------------------------------------------------------
+game_n <- combined %>% 
+    select(Date, Field) %>%
+    unique() %>% 
+    arrange(Date, Field) %>% 
+    mutate(GameN = 1:n())
+
+highlight_teams <- combined %>% 
+    filter(Team == "Stranger Danger") %>% 
+    group_by(Opponent) %>% 
+    summarise(n=n()) %>% 
+    filter(n > 2) %>%  
+    .$Opponent %>% 
+    c(., "Stranger Danger")
+
+games <- combined %>% 
+    merge(game_n) %>% 
+    group_by(Team) %>% 
+    arrange(Date) %>% 
+    mutate(Record = cumsum(Outcome == "Win") / seq_along(Outcome)) %>% 
+    # pick out certain teams to highlight
+    mutate(Highlight = ifelse(Team %in% highlight_teams, Team, "Other")) %>% 
+    mutate(Highlight = factor(Highlight, levels = c(highlight_teams, "Other"))) %>% 
+    arrange(Highlight)
+
+ggplot(games, aes(x = GameN, y = Record, color = Highlight)) + 
+    geom_line(aes(group = Team)) + 
+    # color by Set1 palette except for "other" teams, which should be grey
+    scale_color_manual(values = c(scale_color_brewer(palette = "Set1")$palette(length(highlight_teams)), "grey80")) +
+    ggtitle("Complete record")
+
+seasonal_record <- combined %>% 
+    merge(game_n) %>% 
+    group_by(Team, Year, Season) %>% 
+    arrange(Date) %>% 
+    summarise(Record = mean(Outcome == "Win")) %>% 
+    # pick out certain teams to highlight
+    mutate(Highlight = ifelse(Team %in% highlight_teams, Team, "Other")) %>% 
+    mutate(Highlight = factor(Highlight, levels = c(highlight_teams, "Other"))) %>% 
+    arrange(Highlight)
+
+# seasons not in right order
+ggplot(seasonal_record, aes(x = paste(Year, Season), y = Record, color = Highlight)) + 
+    geom_line(aes(group = Team)) + 
+    # color by Set1 palette except for "other" teams, which should be grey
+    scale_color_manual(values = c(scale_color_brewer(palette = "Set1")$palette(length(highlight_teams)), "grey80")) +
