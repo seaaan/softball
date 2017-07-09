@@ -1,3 +1,24 @@
+rate <- function(x, y) {
+    a <- 10^(x/400)
+    b <- 10^(y/400)
+    a / (a + b)
+}
+
+read.csv("model-outputs/all-models.csv") %>% 
+    filter(Game == max(Game), Team %in% c("Stranger Danger", "Pinjers")) %>% 
+    arrange(Team) %>% 
+    group_by(Model, Arguments, Outcome) %>% 
+    summarise(prob = rate(Rating[1], Rating[2]), Team1 = Team[1]) %>% 
+    arrange(desc(prob))
+
+all_models %>% filter(Team %in% c("Stranger Danger", "Pinjers", "Sluggernauts", "Balls Deep")) %>%
+    ggplot(aes(y = Rating, x = Game, color = Team)) + geom_path() + facet_grid(Model ~ Outcome)
+
+
+
+# add method predicting outcome based on previous meetings of the teams
+
+
 
 get_ranking <- function(team) {
     # from model.R
