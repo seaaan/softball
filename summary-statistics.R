@@ -144,8 +144,10 @@ games <- combined %>%
     mutate(Highlight = factor(Highlight, levels = c(highlight_teams, "Other"))) %>% 
     arrange(Highlight)
 
-ggplot(games, aes(x = GameN, y = Record, color = Highlight)) + 
+high <- filter(games, Highlight != "Other")
+ggplot(games, mapping = aes(x = GameN, y = Record, color = Highlight)) + 
     geom_line(aes(group = Team)) + 
+    geom_line(data = high, aes(group = Team)) + 
     # color by Set1 palette except for "other" teams, which should be grey
     scale_color_manual(values = c(scale_color_brewer(palette = "Set1")$palette(length(highlight_teams)), "grey80")) +
     ggtitle("Complete record")
