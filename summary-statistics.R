@@ -138,7 +138,8 @@ games <- combined %>%
     merge(game_n) %>% 
     group_by(Team) %>% 
     arrange(Date) %>% 
-    mutate(Record = cumsum(Outcome == "Win") / seq_along(Outcome)) %>% 
+    mutate(Record = cumsum(Outcome == "Win") / seq_along(Outcome), 
+        Margin = cumsum(Score - OpponentScore) / seq_along(Outcome)) %>% 
     # pick out certain teams to highlight
     mutate(Highlight = ifelse(Team %in% highlight_teams, Team, "Other")) %>% 
     mutate(Highlight = factor(Highlight, levels = c(highlight_teams, "Other"))) %>% 
@@ -151,6 +152,13 @@ ggplot(games, mapping = aes(x = GameN, y = Record, color = Highlight)) +
     # color by Set1 palette except for "other" teams, which should be grey
     scale_color_manual(values = c(scale_color_brewer(palette = "Set1")$palette(length(highlight_teams)), "grey80")) +
     ggtitle("Complete record")
+
+ggplot(games, mapping = aes(x = GameN, y = Record, color = Highlight)) + 
+    geom_line(aes(group = Team)) + 
+    geom_line(data = high, aes(group = Team)) + 
+    # color by Set1 palette except for "other" teams, which should be grey
+    scale_color_manual(values = c(scale_color_brewer(palette = "Set1")$palette(length(highlight_teams)), "grey80")) +
+    ggtitle("Complete margin")
 
 seasonal_record <- combined %>% 
     merge(game_n) %>% 
