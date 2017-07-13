@@ -20,7 +20,7 @@ all_time %>%
         ggtitle("All time winning pct by teams with 20 or more games")
 
 all_time %>% 
-    ggplot(aes(x = Score, y = n)) + 
+    ggplot(aes(x = Margin, y = n)) + 
     geom_point(aes(color = Team == "Stranger Danger")) + 
     stat_smooth(method = "lm") + 
     ggtitle("Correlation between number of games and mean margin")
