@@ -74,7 +74,8 @@ games <- combined %>%
     group_by(Team) %>% 
     arrange(Date) %>% 
     mutate(Record = cumsum(Outcome == "Win") / seq_along(Outcome), 
-        Margin = cumsum(Score - OpponentScore) / seq_along(Outcome)) %>% 
+        Margin = cumsum(Score - OpponentScore) / seq_along(Outcome), 
+        runfrac = cummean(Score / (Score + OpponentScore))) %>% 
     # pick out certain teams to highlight
     mutate(Highlight = ifelse(Team %in% highlight_teams, Team, "Other")) %>% 
     mutate(Highlight = factor(Highlight, levels = c(highlight_teams, "Other"))) %>% 
@@ -103,16 +104,16 @@ ggplot(games, mapping = aes(x = GameN, y = Margin, color = Highlight)) +
 # convert relative records and runs scored to win probabilities
 # prob = (difference in records) / 2 + 0.5 so 100% and 0% gets 100% prob
 # prob = (difference in avg pct runs scored per game) / 2 + 0.5
-record_run_probs <- combined %>% 
-    filter(Team %in% c("Stranger Danger", COMPETITOR)) %>% 
-    group_by(Team) %>% 
-    summarise(record = mean(Outcome == "Win"), 
-        runfrac = mean(Score / (Score + OpponentScore))) %>% 
-    gather(Model, Rating, -Team) %>% 
+record_run <- games %>%
+        filter(Team %in% c("Stranger Danger", COMPETITOR)) %>% 
+        select(Record, runfrac, Team, GameN) %>% 
+    gather(Model, Rating, -Team, -GameN)
+
+record_run_probs <- record_run %>%  
     group_by(Model) %>% 
     arrange(Team) %>% 
     summarise(prob = 0.5 + (Rating[1] - Rating[2]) / 2, 
-        Arguments = "", Outcome = ifelse(Model == "RunFrac", "score", "winloss")[1], 
+        Arguments = "", Outcome = ifelse(Model == "runfrac", "score", "winloss")[1], 
         Team1 = Team[1]) %>% 
     arrange(desc(prob))
 
@@ -141,4 +142,8 @@ bind_rows(record_run_probs, model_probs) %>%
 all_models %>% filter(Team %in% c("Stranger Danger", COMPETITOR)) %>%
     ggplot(aes(y = Rating, x = Game, color = Team)) + geom_path() + 
     facet_grid(Model ~ Outcome)
+
+ggplot(record_run, aes(x = GameN, y = Rating, color = Team)) + geom_path() +
+    facet_wrap(~Model)
+
 ```
