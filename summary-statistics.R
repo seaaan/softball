@@ -105,7 +105,7 @@ combined %>%
     summarise(n = n(), Win = sum(Outcome == "Win"), Tie = sum(Outcome == "Tie"), 
         Loss = sum(Outcome == "Loss")) %>% 
         filter(n > 1) %>% 
-        arrange((Win + Tie) / n)
+        arrange((Win + Tie / 2) / n)
 
 selected_teams <- function(y) {
     by_season %>% 
@@ -170,14 +170,18 @@ seasonal_record <- combined %>%
     merge(game_n) %>% 
     group_by(Team, Year, Season) %>% 
     arrange(Date) %>% 
-    summarise(Record = mean(Outcome == "Win")) %>% 
+    summarise(Record = mean(Outcome == "Win")) %>%
+    ungroup() %>% 
+    # put year and season in the correct order 
+    arrange(Year, Season) %>% 
+    mutate(YearSeason = paste(Year, as.character(Season)), 
+        YearSeason = factor(YearSeason, levels = unique(YearSeason))) %>% 
     # pick out certain teams to highlight
     mutate(Highlight = ifelse(Team %in% highlight_teams, Team, "Other")) %>% 
     mutate(Highlight = factor(Highlight, levels = c(highlight_teams, "Other"))) %>% 
     arrange(Highlight)
 
-# seasons not in right order
-ggplot(seasonal_record, aes(x = paste(Year, Season), y = Record, color = Highlight)) + 
+ggplot(seasonal_record, aes(x = YearSeason, y = Record, color = Highlight)) + 
     geom_line(aes(group = Team)) + 
     # color by Set1 palette except for "other" teams, which should be grey
     scale_color_manual(values = c(scale_color_brewer(palette = "Set1")$palette(length(highlight_teams)), "grey80")) +
