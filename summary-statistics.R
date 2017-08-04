@@ -9,19 +9,20 @@ all_time <- combined %>%
     summarise(Win = sum(Outcome == "Win"), Tie = sum(Outcome == "Tie"), 
         Loss = sum(Outcome == "Loss"), Margin = mean(Score - OpponentScore), 
         MeanScore = mean(Score), Score = sum(Score), n = n(), pct = Win / n) %>% 
-    arrange(desc(n))
+    arrange(desc(n)) %>% 
+    mutate(us = ifelse(Team == "Stranger Danger", "Stranger Danger", "Other"))
 
 all_time %>% 
     arrange(pct) %>% 
     mutate(index = 1:nrow(.)) %>% 
     ggplot(aes(x = index, y = pct)) + 
-        geom_point(aes(color = Team == "Stranger Danger")) + 
+        geom_point(aes(color = us)) + 
         facet_wrap(~ n > 20) + 
         ggtitle("All time winning pct by teams with 20 or more games")
 
 all_time %>% 
     ggplot(aes(x = Margin, y = n)) + 
-    geom_point(aes(color = Team == "Stranger Danger")) + 
+    geom_point(aes(color = us)) + 
     stat_smooth(method = "lm") + 
     ggtitle("Correlation between number of games and mean margin")
     
