@@ -10,7 +10,7 @@ combined <- get_tidy_game_data()
 options(tibble.width = Inf)
 THIS_SEASON <- "Summer"
 THIS_YEAR <- 2017
-COMPETITOR <- "Dae's Hoes"
+COMPETITOR <- "Flesh Eating Sharks"
 ```
 
 ## This season
@@ -24,7 +24,7 @@ games <- season %>%
     group_by(Team) %>% 
     summarise(Win = sum(Outcome == "Win"), Tie = sum(Outcome == "Tie"), 
         Loss = sum(Outcome == "Loss"), Games = n()) %>% 
-    arrange(desc(Win / Games))
+    arrange(desc((Win + (Tie / 2)) / Games))
 
 scores <- season %>% 
     group_by(Team, Highlight) %>% 
@@ -33,7 +33,7 @@ scores <- season %>%
         Margin = round(mean(Score - OpponentScore), 1), 
         TotalRunsScored = sum(Score), TotalRunsAllowed = sum(OpponentScore)) %>% 
     # order by games df
-    arrange(match(Team, games$Team))
+    arrange(desc(Margin))
 
 print(games, n = Inf)
 
@@ -145,5 +145,8 @@ all_models %>% filter(Team %in% c("Stranger Danger", COMPETITOR)) %>%
 
 ggplot(record_run, aes(x = GameN, y = Rating, color = Team)) + geom_path() +
     facet_wrap(~Model)
+
+
+rolling_average <- function(x, n) stats::filter(x,rep(1/n,n), sides=1) %>% as.numeric()
 
 ```
