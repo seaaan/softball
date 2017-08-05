@@ -29,50 +29,20 @@ all_time %>%
 # ----------------------------------------------------------------------------
 # score-level summaries ------------------------------------------------------
 # ----------------------------------------------------------------------------
-
-combined %>% 
+to_plot <- combined %>% 
     group_by(Team) %>% 
     filter(n() > 25, Outcome != "Tie") %>% 
     ungroup() %>% 
-    mutate(Team = str_replace(Team, " ", "\n")) %>% 
-    ggplot(aes(y = Score, x = Outcome)) + 
-        geom_boxplot() + geom_point() +
-        ggtitle("Score distributions for wins vs losses for\nteams with more than 25 games") + 
-        facet_wrap(~ Team)
+    mutate(Team = str_replace(Team, " ", "\n"))
+
+ggplot(to_plot, aes(x = Score, fill = Outcome)) + 
+    geom_histogram(bins = max(abs(to_plot$Score - to_plot$OpponentScore))) +
+    ggtitle("Score distributions for wins vs losses for\nteams with more than 25 games") + 
+    facet_wrap(~ Team, scales = "free_y")
 
 # ---------------------------------------------------------------------------
-# season-level summaries ----------------------------------------------------
+# selected teams ------------------------------------------------------------
 # ---------------------------------------------------------------------------
-by_season <- combined %>% 
-    group_by(Team, Year, Season) %>% 
-    summarise(Win = sum(Outcome == "Win"), Tie = sum(Outcome == "Tie"), 
-        Loss = sum(Outcome == "Loss"), n = n(), pct = Win / n, 
-        margin = mean(Score - OpponentScore), 
-        net = sum(Score) - sum(OpponentScore)) %>% 
-    arrange(desc(n))
-
-season_plot <- function(...) {
-    ggplot(by_season, 
-            aes_string(color = 'Team == "Stranger Danger"', x = "Season", ...)) + 
-        geom_point() + labs(color = "Us?") + 
-        geom_line(aes(group=Team)) + 
-        facet_wrap(~ Year)
-}
-
-season_plot(y = "pct") +
-    ggtitle("Winning percent by season for all teams")
-
-season_plot(y = "margin") + 
-    ggtitle("Average score margin by season for all teams")
-
-season_plot(y = "net") + 
-    ggtitle("Net score for the whole season for all teams")
-
-by_season %>% 
-    ggplot(aes(x = pct, y = margin, color = Team == "Stranger Danger")) +
-    geom_point() + facet_grid(Season ~ Year) + labs(color = "Us?") +
-    ggtitle("Average score margin against winning percent")
-
 filter(combined, Team %in% c("Stranger Danger", "Balls Deep", "Hitmen", "#Blessed")) %>% 
     arrange(Outcome == "Tie") %>% 
     ggplot(aes(x = Year, y = Score - OpponentScore, color = Outcome)) + 
@@ -146,6 +116,44 @@ ggplot(games, mapping = aes(x = GameN, y = Record, color = Highlight)) +
     # color by Set1 palette except for "other" teams, which should be grey
     scale_color_manual(values = c(scale_color_brewer(palette = "Set1")$palette(length(highlight_teams)), "grey80")) +
     ggtitle("Complete margin")
+
+# ---------------------------------------------------------------------------
+# season-level summaries ----------------------------------------------------
+# ---------------------------------------------------------------------------
+by_season <- combined %>% 
+    group_by(Team, Year, Season) %>% 
+    summarise(Win = sum(Outcome == "Win"), Tie = sum(Outcome == "Tie"), 
+        Loss = sum(Outcome == "Loss"), n = n(), pct = Win / n, 
+        margin = mean(Score - OpponentScore), 
+        net = sum(Score) - sum(OpponentScore)) %>% 
+    arrange(desc(n)) %>% 
+    ungroup() %>% 
+    # put year and season in the correct order 
+    arrange(Year, Season) %>% 
+    mutate(YearSeason = paste(Year, as.character(Season)), 
+        YearSeason = factor(YearSeason, levels = unique(YearSeason)))
+
+season_plot <- function(...) {
+    ggplot(by_season, 
+        aes_string(color = 'Team == "Stranger Danger"', x = "YearSeason", ...)) + 
+        labs(color = "Us?") + 
+        geom_line(aes(group=Team)) +
+        gghlab::tilt_x_labels()
+}
+
+season_plot(y = "pct") +
+    ggtitle("Winning percent by season for all teams")
+
+season_plot(y = "margin") + 
+    ggtitle("Average score margin by season for all teams")
+
+season_plot(y = "net") + 
+    ggtitle("Net score for the whole season for all teams")
+
+by_season %>% 
+    ggplot(aes(x = pct, y = margin, color = Team == "Stranger Danger")) +
+    geom_point() + facet_grid(Season ~ Year) + labs(color = "Us?") +
+    ggtitle("Average score margin against winning percent")
 
 seasonal_record <- combined %>% 
     merge(game_n) %>% 
