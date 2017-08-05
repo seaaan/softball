@@ -36,7 +36,7 @@ to_plot <- combined %>%
     mutate(Team = str_replace(Team, " ", "\n"))
 
 ggplot(to_plot, aes(x = Score, fill = Outcome)) + 
-    geom_histogram(bins = max(abs(to_plot$Score - to_plot$OpponentScore))) +
+    geom_density(alpha = 0.5) + 
     ggtitle("Score distributions for wins vs losses for\nteams with more than 25 games") + 
     facet_wrap(~ Team, scales = "free_y")
 
