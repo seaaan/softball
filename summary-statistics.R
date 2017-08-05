@@ -29,17 +29,6 @@ all_time %>%
 # ----------------------------------------------------------------------------
 # score-level summaries ------------------------------------------------------
 # ----------------------------------------------------------------------------
-combined %>% 
-    filter(Outcome != "Tie") %>% 
-    ggplot(aes(x = Score, fill = Outcome)) + 
-        geom_density(alpha = 0.5) + 
-        ggtitle("Score distributions for wins vs losses")
-
-combined %>% 
-    group_by(Score) %>% 
-    summarise(WinProb = mean(Outcome == "Win")) %>% 
-    ggplot(aes(x = Score, y = WinProb)) + geom_line() + 
-    ggtitle("Probability of winning with each score")
 
 combined %>% 
     group_by(Team) %>% 
@@ -50,15 +39,6 @@ combined %>%
         geom_boxplot() + geom_point() +
         ggtitle("Score distributions for wins vs losses for\nteams with more than 25 games") + 
         facet_wrap(~ Team)
-
-combined %>% 
-    # select wins and losses evenly/randomly
-    group_by(Game) %>% 
-    sample_n(1) %>% 
-    ggplot(aes(x = Score, y = OpponentScore)) + 
-        geom_point(aes(color = Outcome)) + 
-        ggtitle("Relation of scores to each other") + 
-        stat_smooth(method = "lm")
 
 # ---------------------------------------------------------------------------
 # season-level summaries ----------------------------------------------------

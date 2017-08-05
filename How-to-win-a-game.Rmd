@@ -1,0 +1,90 @@
+---
+title: "How to win a game"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+source("helpers.R")
+combined <- get_tidy_game_data()
+```
+
+## How many points do you have to score to win a game?
+
+This analysis focuses on how many runs you need to score to win a game, based on data up to this point. 
+
+Some questions addressed here:
+
+* Lowest score that has ever won? Highest score that has ever lost? 
+* Number of runs that leading to 25, 50, 75% chance of winning? 
+* Typical difference between a winning score and a losing score
+* Relationship between number of runs you score and number they score
+
+## Distribution of runs
+
+```{r}
+no_ties <- combined %>% 
+    filter(Outcome != "Tie")
+
+ggplot(no_ties, aes(x = Score, fill = Outcome)) + 
+    geom_density(alpha = 0.5) + 
+    ggtitle("Score distributions for wins vs losses") + 
+    xlab("Runs scored")
+```
+
+This graph shows the distribution of scores for `r nrow(no_ties) / 2` games. The x-axis shows the number of runs scored and the y-axis shows an estimate of the number of games with that many runs scored. The colors indicate whether the outcome was a win or loss. From this graph, you can see that the most common score for the winning team is a bit above 15. The most common score for the losing team is about 6. A few unlucky teams have lost despite scoring up to 25 runs Likewise, some lucky teams have scored only 5 runs but still won! 
+
+```{r}
+to_plot <- combined %>% 
+    # select wins and losses evenly/randomly
+    group_by(Game) %>% 
+    sample_n(1) 
+
+m <- glm(OpponentScore ~ Score, family = "poisson", data = to_plot)
+
+ggplot(to_plot, aes(x = Score, y = OpponentScore)) + 
+    geom_point(aes(color = Outcome)) + 
+    ggtitle("Relation of scores to each other") + 
+    stat_smooth(method = "glm", method.args = list(family = "poisson")) + 
+    xlab("Runs scored") + ylab("Opponent runs scored")
+```
+
+How does the number of runs your team scores relate to the number of runs the other team scores? Each point in this graph is a game, with the x and y positions showing your score and the other team's score. The color shows whether you won, lost, or tied. The line shows an estimate of how the scores relate to each other. It estimates that if you score 0 runs, your opponent will score `r round(exp(1)^unname(m$coefficients[1]), 1)` runs. For each run you score, your opponent's score will decrease along the line. 
+
+## Margin of victory
+
+```{r}
+wins <- combined %>% 
+    filter(Outcome == "Win")
+
+ggplot(wins, aes(x = Score - OpponentScore)) + 
+    geom_histogram(bins = max(wins$Score - wins$OpponentScore)) + 
+    ggtitle("Margins of victory") +
+    ylab("Number of games") + 
+    xlab("Winner's score minus loser's score")
+```
+
+How much do teams usually win by? This graph shows that the single most common margin of victory is only a single run, with at least 70 games in which the winner scored one run more than the losing team. Large margins of victory are generally less common than small ones, and margins of victory above 20 are particularly uncommon. 
+
+```{r}
+ggplot(wins, aes(y = Score - OpponentScore, x = Score)) + 
+    geom_point() + 
+    ggtitle("Margin of victory given your score") +
+    ylab("Margin of victory") + 
+    xlab("Winner's score")
+```
+
+This graph shows the same data as the previous graph, with the added variable of the number of runs scored by the winner. To have a large margin of victory you, of course, need to score a lot of runs. But scoring a lot of runs doesn't guarantee a large margin of victory -- teams have scored more than 20 runs and still won by only a single run! Once the winner's score reaches 30 runs, though, it's usually a blowout. 
+
+## Chance of winning
+
+```{r}
+combined %>% 
+    group_by(Score) %>% 
+    summarise(WinProb = mean(Outcome == "Win")) %>% 
+    ggplot(aes(x = Score, y = 100 * WinProb)) + geom_line() + 
+    ggtitle("Probability of winning given score") + 
+    ylab("Percent of games won") + xlab("Runs scored")
+```
+
+How many runs do you need to score to be guaranteed a win? This graph answers that question with the same data as the previous graph. The line indicates what percent of games were won with a given number of runs. For example, with 10 runs, teams won about 25% of the team. At 12-14 runs, about half of games are won. No team has ever lost when they score at least 26 runs or won when they scored fewer than five runs.  
