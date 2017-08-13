@@ -66,8 +66,13 @@ highlight_teams <- combined %>%
     group_by(Opponent) %>% 
     summarise(n=n()) %>% 
     filter(n > 2) %>%  
-    .$Opponent %>% 
-    c(., COMPETITOR, "Stranger Danger")
+    .$Opponent
+
+if (COMPETITOR %in% highlight_teams) {
+    highlight_teams <- c(highlight_teams, "Stranger Danger")  
+} else {
+    highlight_teams <- c(highlight_teams, COMPETITOR, "Stranger Danger")
+}
 
 games <- combined %>% 
     merge(game_n) %>% 
