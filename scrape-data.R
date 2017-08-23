@@ -71,6 +71,7 @@ combine_duplicates <- function(n) {
         # reddit team
         str_replace("\\/R\\/Seattle", "#Blessed") %>% 
         str_replace("Upvotes", "#Blessed") %>% 
+        str_replace("#Blessed", "Eagle Bait") %>% 
         # oregon sucks
         str_replace("Oregon Sucks$", "Oregon Sucks!")
 }
