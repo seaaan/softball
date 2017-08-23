@@ -8,9 +8,9 @@ knitr::opts_chunk$set(echo = FALSE)
 source("helpers.R")
 combined <- get_tidy_game_data()
 options(tibble.width = Inf)
-THIS_SEASON <- "Summer"
+THIS_SEASON <- "Fall"
 THIS_YEAR <- 2017
-COMPETITOR <- "Flesh Eating Sharks"
+COMPETITOR <- "Seattle Seattle Mariners"
 ```
 
 ## This season

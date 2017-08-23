@@ -1,7 +1,7 @@
 "Year","Season","Week","Date","Field","TeamOne","TeamTwo","TeamOneScore","TeamTwoScore"
 "2013","Fall",1,2013-08-18 12:00:00,"Lower Woodland PF Field 3","Balls Deep","Stranger Danger",19,17
 "2013","Fall",1,2013-08-18 13:30:00,"Lower Woodland PF Field 3","Balls Deep","The Crows",11,8
-"2013","Fall",1,2013-08-18 15:00:00,"Lower Woodland PF Field 3","#Blessed","The Crows",5,14
+"2013","Fall",1,2013-08-18 15:00:00,"Lower Woodland PF Field 3","Eagle Bait","The Crows",5,14
 "2013","Fall",1,2013-08-18 16:30:00,"Lower Woodland PF Field 3","They Might Be Giants","Chico's Bail Bonds",11,22
 "2013","Fall",1,2013-08-18 18:00:00,"Lower Woodland PF Field 3","The Lemons","Chico's Bail Bonds",9,24
 "2013","Fall",1,2013-08-18 12:00:00,"Lower Woodland PF Field 6","Arbornauts","Fowl Balls",13,18
@@ -12,8 +12,8 @@
 "2013","Fall",2,2013-08-25 12:00:00,"Lower Woodland PF Field 3","They Might Be Giants","The Lemons",10,9
 "2013","Fall",2,2013-08-25 13:30:00,"Lower Woodland PF Field 3","The Lemons","The Crows",15,12
 "2013","Fall",2,2013-08-25 15:00:00,"Lower Woodland PF Field 3","Stranger Danger","The Crows",7,6
-"2013","Fall",2,2013-08-25 16:30:00,"Lower Woodland PF Field 3","Stranger Danger","#Blessed",9,16
-"2013","Fall",2,2013-08-25 18:00:00,"Lower Woodland PF Field 3","#Blessed","Balls Deep",6,7
+"2013","Fall",2,2013-08-25 16:30:00,"Lower Woodland PF Field 3","Stranger Danger","Eagle Bait",9,16
+"2013","Fall",2,2013-08-25 18:00:00,"Lower Woodland PF Field 3","Eagle Bait","Balls Deep",6,7
 "2013","Fall",2,2013-08-25 12:00:00,"Lower Woodland PF Field 6","Arbornauts","Chico's Bail Bonds",21,6
 "2013","Fall",2,2013-08-25 13:30:00,"Lower Woodland PF Field 6","Arbornauts","Afternoon Delight",10,16
 "2013","Fall",2,2013-08-25 15:00:00,"Lower Woodland PF Field 6","Fowl Balls","That's What She Said!!",13,5
@@ -24,7 +24,7 @@
 "2013","Fall",3,2013-09-08 15:00:00,"Lower Woodland PF Field 3","Fowl Balls","Afternoon Delight",12,12
 "2013","Fall",3,2013-09-08 16:30:00,"Lower Woodland PF Field 3","Slap My Pitch Up","Fowl Balls",7,8
 "2013","Fall",3,2013-09-08 18:00:00,"Lower Woodland PF Field 3","The Lemons","Slap My Pitch Up",9,19
-"2013","Fall",3,2013-09-08 12:00:00,"Lower Woodland PF Field 6","Afternoon Delight","#Blessed",20,1
+"2013","Fall",3,2013-09-08 12:00:00,"Lower Woodland PF Field 6","Afternoon Delight","Eagle Bait",20,1
 "2013","Fall",3,2013-09-08 13:30:00,"Lower Woodland PF Field 6","The Crows","That's What She Said!!",5,20
 "2013","Fall",3,2013-09-08 15:00:00,"Lower Woodland PF Field 6","Chico's Bail Bonds","Stranger Danger",18,1
 "2013","Fall",3,2013-09-08 16:30:00,"Lower Woodland PF Field 6","Too Drunk To Score","Chico's Bail Bonds",2,8
@@ -33,11 +33,11 @@
 "2013","Fall",4,2013-09-15 13:30:00,"Lower Woodland PF Field 3","Arbornauts","Stranger Danger",16,4
 "2013","Fall",4,2013-09-15 15:00:00,"Lower Woodland PF Field 3","Arbornauts","That's What She Said!!",6,12
 "2013","Fall",4,2013-09-15 12:00:00,"Lower Woodland PF Field 6","They Might Be Giants","The Crows",21,5
-"2013","Fall",4,2013-09-15 13:30:00,"Lower Woodland PF Field 6","#Blessed","They Might Be Giants",3,19
-"2013","Fall",4,2013-09-15 15:00:00,"Lower Woodland PF Field 6","The Lemons","#Blessed",8,1
+"2013","Fall",4,2013-09-15 13:30:00,"Lower Woodland PF Field 6","Eagle Bait","They Might Be Giants",3,19
+"2013","Fall",4,2013-09-15 15:00:00,"Lower Woodland PF Field 6","The Lemons","Eagle Bait",8,1
 "2013","Fall",6,2013-10-06 14:00:00,"Lower Woodland PF Field 3","Arbornauts","That's What She Said!!",12,13
 "2013","Fall",6,2013-10-06 15:30:00,"Lower Woodland PF Field 3","That's What She Said!!","Afternoon Delight",13,11
-"2013","Fall",6,2013-10-06 17:00:00,"Lower Woodland PF Field 3","#Blessed","The Crows",7,8
+"2013","Fall",6,2013-10-06 17:00:00,"Lower Woodland PF Field 3","Eagle Bait","The Crows",7,8
 "2013","Fall",6,2013-10-06 18:30:00,"Lower Woodland PF Field 3","The Crows","They Might Be Giants",14,8
 "2013","Fall",6,2013-10-06 20:00:00,"Lower Woodland PF Field 3","The Crows","The Lemons",6,15
 "2013","Fall",6,2013-10-06 14:00:00,"Lower Woodland PF Field 6","Too Drunk To Score","Fowl Balls",18,6
@@ -49,14 +49,14 @@
 "2013","Summer",1,2013-06-09 15:00:00,"Greenlake Field 1","First World Problems","Find The Holes",5,8
 "2013","Summer",1,2013-06-09 16:30:00,"Greenlake Field 1","Twin Diesels","Fowl Balls",14,13
 "2013","Summer",1,2013-06-09 18:00:00,"Greenlake Field 1","Sluggernauts","Stranger Danger",26,10
-"2013","Summer",1,2013-06-09 12:00:00,"Greenlake Field 2","#Blessed","Canlis",8,7
+"2013","Summer",1,2013-06-09 12:00:00,"Greenlake Field 2","Eagle Bait","Canlis",8,7
 "2013","Summer",1,2013-06-09 13:30:00,"Greenlake Field 2","Gomicroamadub","Booze On First",16,9
 "2013","Summer",1,2013-06-09 15:00:00,"Greenlake Field 2","Karate Explosion","Afternoon Delight",4,16
 "2013","Summer",1,2013-06-09 16:30:00,"Greenlake Field 2","Here For The Beer","Off In The Corner",28,3
 "2013","Summer",1,2013-06-09 18:00:00,"Greenlake Field 2","Off In The Corner","Randy's Johnson",2,13
 "2013","Summer",2,2013-06-16 12:00:00,"Greenlake Field 1","Gomicroamadub","Canlis",4,14
 "2013","Summer",2,2013-06-16 13:30:00,"Greenlake Field 1","Here For The Beer","Sluggernauts",20,6
-"2013","Summer",2,2013-06-16 15:00:00,"Greenlake Field 1","Randy's Johnson","#Blessed",9,9
+"2013","Summer",2,2013-06-16 15:00:00,"Greenlake Field 1","Randy's Johnson","Eagle Bait",9,9
 "2013","Summer",2,2013-06-16 16:30:00,"Greenlake Field 1","Randy's Johnson","Stranger Danger",15,12
 "2013","Summer",2,2013-06-16 18:00:00,"Greenlake Field 1","Booze On First","Off In The Corner",12,18
 "2013","Summer",2,2013-06-16 12:00:00,"Greenlake Field 2","Fowl Balls","Find The Holes",11,6
@@ -70,13 +70,13 @@
 "2013","Summer",3,2013-06-23 16:30:00,"Greenlake Field 1","Your Mom Plays Softball","Twin Diesels",4,6
 "2013","Summer",3,2013-06-23 18:00:00,"Greenlake Field 1","Karate Explosion","Twin Diesels",9,11
 "2013","Summer",3,2013-06-23 12:00:00,"Greenlake Field 2","Booze On First","Sluggernauts",11,14
-"2013","Summer",3,2013-06-23 13:30:00,"Greenlake Field 2","#Blessed","Booze On First",13,8
+"2013","Summer",3,2013-06-23 13:30:00,"Greenlake Field 2","Eagle Bait","Booze On First",13,8
 "2013","Summer",3,2013-06-23 15:00:00,"Greenlake Field 2","Canlis","Off In The Corner",15,3
 "2013","Summer",3,2013-06-23 16:30:00,"Greenlake Field 2","Randy's Johnson","Gomicroamadub",10,15
 "2013","Summer",3,2013-06-23 18:00:00,"Greenlake Field 2","Stranger Danger","Gomicroamadub",14,8
 "2013","Summer",4,2013-06-30 12:00:00,"Greenlake Field 1","Gomicroamadub","Off In The Corner",4,17
 "2013","Summer",4,2013-06-30 13:30:00,"Greenlake Field 1","Booze On First","Randy's Johnson",26,11
-"2013","Summer",4,2013-06-30 15:00:00,"Greenlake Field 1","Stranger Danger","#Blessed",15,24
+"2013","Summer",4,2013-06-30 15:00:00,"Greenlake Field 1","Stranger Danger","Eagle Bait",15,24
 "2013","Summer",4,2013-06-30 16:30:00,"Greenlake Field 1","Stranger Danger","Here For The Beer",3,8
 "2013","Summer",4,2013-06-30 18:00:00,"Greenlake Field 1","Sluggernauts","Canlis",11,21
 "2013","Summer",4,2013-06-30 12:00:00,"Greenlake Field 2","Afternoon Delight","Twin Diesels",15,4
@@ -89,15 +89,15 @@
 "2013","Summer",5,2013-07-14 15:00:00,"Greenlake Field 1","Afternoon Delight","Find The Holes",11,6
 "2013","Summer",5,2013-07-14 16:30:00,"Greenlake Field 1","First World Problems","Your Mom Plays Softball",8,9
 "2013","Summer",5,2013-07-14 18:00:00,"Greenlake Field 1","Stranger Danger","Booze On First",8,28
-"2013","Summer",5,2013-07-14 12:00:00,"Greenlake Field 2","#Blessed","Gomicroamadub",42,2
-"2013","Summer",5,2013-07-14 13:30:00,"Greenlake Field 2","#Blessed","Here For The Beer",6,7
+"2013","Summer",5,2013-07-14 12:00:00,"Greenlake Field 2","Eagle Bait","Gomicroamadub",42,2
+"2013","Summer",5,2013-07-14 13:30:00,"Greenlake Field 2","Eagle Bait","Here For The Beer",6,7
 "2013","Summer",5,2013-07-14 15:00:00,"Greenlake Field 2","Here For The Beer","Canlis",5,4
 "2013","Summer",5,2013-07-14 16:30:00,"Greenlake Field 2","Sluggernauts","Randy's Johnson",6,13
 "2013","Summer",5,2013-07-14 18:00:00,"Greenlake Field 2","Sluggernauts","Off In The Corner",7,11
 "2013","Summer",6,2013-07-21 12:00:00,"Greenlake Field 1","Stranger Danger","Off In The Corner",11,12
 "2013","Summer",6,2013-07-21 13:30:00,"Greenlake Field 1","Stranger Danger","Canlis",9,20
 "2013","Summer",6,2013-07-21 15:00:00,"Greenlake Field 1","Canlis","Booze On First",27,0
-"2013","Summer",6,2013-07-21 16:30:00,"Greenlake Field 1","Sluggernauts","#Blessed",7,33
+"2013","Summer",6,2013-07-21 16:30:00,"Greenlake Field 1","Sluggernauts","Eagle Bait",7,33
 "2013","Summer",6,2013-07-21 18:00:00,"Greenlake Field 1","Gomicroamadub","Here For The Beer",1,16
 "2013","Summer",6,2013-07-21 12:00:00,"Greenlake Field 2","First World Problems","Afternoon Delight",16,9
 "2013","Summer",6,2013-07-21 15:00:00,"Greenlake Field 2","Karate Explosion","Seattle Shaggy Muskrats",17,8
@@ -105,7 +105,7 @@
 "2013","Summer",6,2013-07-21 18:00:00,"Greenlake Field 2","Twin Diesels","Randy's Johnson",22,7
 "2013","Summer",7,2013-07-28 13:30:00,"Greenlake Field 1","Find The Holes","Afternoon Delight",8,18
 "2013","Summer",7,2013-07-28 15:00:00,"Greenlake Field 1","First World Problems","Karate Explosion",14,5
-"2013","Summer",7,2013-07-28 16:30:00,"Greenlake Field 1","Gomicroamadub","#Blessed",7,25
+"2013","Summer",7,2013-07-28 16:30:00,"Greenlake Field 1","Gomicroamadub","Eagle Bait",7,25
 "2013","Summer",7,2013-07-28 18:00:00,"Greenlake Field 1","Fowl Balls","Your Mom Plays Softball",16,25
 "2013","Summer",7,2013-07-28 12:00:00,"Greenlake Field 2","Stranger Danger","Booze On First",2,15
 "2013","Summer",7,2013-07-28 13:30:00,"Greenlake Field 2","Booze On First","Here For The Beer",3,7
@@ -116,7 +116,7 @@
 "2013","Summer",8,2013-08-04 15:00:00,"Greenlake Field 1","Seattle Shaggy Muskrats","Your Mom Plays Softball",6,18
 "2013","Summer",8,2013-08-04 16:30:00,"Greenlake Field 1","First World Problems","Afternoon Delight",8,12
 "2013","Summer",8,2013-08-04 18:00:00,"Greenlake Field 1","Afternoon Delight","Your Mom Plays Softball",9,17
-"2013","Summer",8,2013-08-04 12:00:00,"Greenlake Field 2","Canlis","#Blessed",15,11
+"2013","Summer",8,2013-08-04 12:00:00,"Greenlake Field 2","Canlis","Eagle Bait",15,11
 "2014","Fall",1,2014-08-17 12:00:00,"Lower Woodland PF Field 3","Adversity Overcomers","Chico's Bail Bonds",18,11
 "2014","Fall",1,2014-08-17 13:30:00,"Lower Woodland PF Field 3","Adversity Overcomers","They Might Be Giants",16,10
 "2014","Fall",1,2014-08-17 15:00:00,"Lower Woodland PF Field 3","I Like Big Bunts","Stranger Danger",19,3
@@ -126,11 +126,11 @@
 "2014","Fall",1,2014-08-17 13:30:00,"Lower Woodland PF Field 6","Too Drunk To Score","Chico's Bail Bonds",12,13
 "2014","Fall",1,2014-08-17 15:00:00,"Lower Woodland PF Field 6","That's What She Said!!","The Crows",17,6
 "2014","Fall",1,2014-08-17 16:30:00,"Lower Woodland PF Field 6","I Like Big Bunts","The Crows",9,11
-"2014","Fall",1,2014-08-17 18:00:00,"Lower Woodland PF Field 6","Find The Holes","#Blessed",15,6
+"2014","Fall",1,2014-08-17 18:00:00,"Lower Woodland PF Field 6","Find The Holes","Eagle Bait",15,6
 "2014","Fall",2,2014-08-24 12:00:00,"Lower Woodland PF Field 3","Arbornauts","They Might Be Giants",12,25
 "2014","Fall",2,2014-08-24 13:30:00,"Lower Woodland PF Field 3","Arbornauts","Too Drunk To Score",10,10
-"2014","Fall",2,2014-08-24 15:00:00,"Lower Woodland PF Field 3","#Blessed","I Like Big Bunts",17,18
-"2014","Fall",2,2014-08-24 16:30:00,"Lower Woodland PF Field 3","#Blessed","Stranger Danger",19,11
+"2014","Fall",2,2014-08-24 15:00:00,"Lower Woodland PF Field 3","Eagle Bait","I Like Big Bunts",17,18
+"2014","Fall",2,2014-08-24 16:30:00,"Lower Woodland PF Field 3","Eagle Bait","Stranger Danger",19,11
 "2014","Fall",2,2014-08-24 18:00:00,"Lower Woodland PF Field 3","Stranger Danger","The Crows",4,24
 "2014","Fall",2,2014-08-24 12:00:00,"Lower Woodland PF Field 6","Find The Holes","Adversity Overcomers",8,14
 "2014","Fall",2,2014-08-24 13:30:00,"Lower Woodland PF Field 6","Find The Holes","Belltown Pub",11,8
@@ -141,7 +141,7 @@
 "2014","Fall",3,2014-09-07 13:30:00,"Lower Woodland PF Field 3","I Like Big Bunts","They Might Be Giants",19,8
 "2014","Fall",3,2014-09-07 15:00:00,"Lower Woodland PF Field 3","Stranger Danger","Find The Holes",8,23
 "2014","Fall",3,2014-09-07 16:30:00,"Lower Woodland PF Field 3","Find The Holes","The Crows",16,7
-"2014","Fall",3,2014-09-07 18:00:00,"Lower Woodland PF Field 3","#Blessed","The Crows",14,10
+"2014","Fall",3,2014-09-07 18:00:00,"Lower Woodland PF Field 3","Eagle Bait","The Crows",14,10
 "2014","Fall",3,2014-09-07 12:00:00,"Lower Woodland PF Field 6","Chico's Bail Bonds","That's What She Said!!",6,12
 "2014","Fall",3,2014-09-07 13:30:00,"Lower Woodland PF Field 6","That's What She Said!!","Too Drunk To Score",12,16
 "2014","Fall",3,2014-09-07 15:00:00,"Lower Woodland PF Field 6","Adversity Overcomers","Too Drunk To Score",12,11
@@ -152,13 +152,13 @@
 "2014","Fall",4,2014-09-14 15:00:00,"Lower Woodland PF Field 3","Arbornauts","Stranger Danger",23,5
 "2014","Fall",4,2014-09-14 16:30:00,"Lower Woodland PF Field 3","Arbornauts","Find The Holes",13,10
 "2014","Fall",4,2014-09-14 12:00:00,"Lower Woodland PF Field 6","The Crows","Too Drunk To Score",16,15
-"2014","Fall",4,2014-09-14 13:30:00,"Lower Woodland PF Field 6","#Blessed","Belltown Pub",10,22
-"2014","Fall",4,2014-09-14 15:00:00,"Lower Woodland PF Field 6","They Might Be Giants","#Blessed",20,9
+"2014","Fall",4,2014-09-14 13:30:00,"Lower Woodland PF Field 6","Eagle Bait","Belltown Pub",10,22
+"2014","Fall",4,2014-09-14 15:00:00,"Lower Woodland PF Field 6","They Might Be Giants","Eagle Bait",20,9
 "2014","Fall",4,2014-09-14 16:30:00,"Lower Woodland PF Field 6","Rich And Jay's Love Children","They Might Be Giants",2,6
 "2014","Fall",4,2014-09-14 18:00:00,"Lower Woodland PF Field 6","Adversity Overcomers","That's What She Said!!",12,10
 "2014","Fall",5,2014-09-21 12:00:00,"Lower Woodland PF Field 3","Chico's Bail Bonds","Find The Holes",14,15
 "2014","Fall",5,2014-09-21 13:30:00,"Lower Woodland PF Field 3","Find The Holes","Adversity Overcomers",1,17
-"2014","Fall",5,2014-09-21 15:00:00,"Lower Woodland PF Field 3","#Blessed","Rich And Jay's Love Children",8,10
+"2014","Fall",5,2014-09-21 15:00:00,"Lower Woodland PF Field 3","Eagle Bait","Rich And Jay's Love Children",8,10
 "2014","Fall",5,2014-09-21 16:30:00,"Lower Woodland PF Field 3","Rich And Jay's Love Children","I Like Big Bunts",9,10
 "2014","Fall",5,2014-09-21 18:00:00,"Lower Woodland PF Field 3","Belltown Pub","I Like Big Bunts",14,12
 "2014","Fall",5,2014-09-21 12:00:00,"Lower Woodland PF Field 6","Too Drunk To Score","That's What She Said!!",17,21
@@ -166,7 +166,7 @@
 "2014","Fall",5,2014-09-21 15:00:00,"Lower Woodland PF Field 6","Belltown Pub","They Might Be Giants",14,5
 "2014","Fall",5,2014-09-21 16:30:00,"Lower Woodland PF Field 6","Belltown Pub","The Crows",15,4
 "2014","Fall",5,2014-09-21 18:00:00,"Lower Woodland PF Field 6","That's What She Said!!","Adversity Overcomers",20,17
-"2014","Summer",1,2014-06-08 12:00:00,"Greenlake Field 1","Sluggernauts","#Blessed",16,16
+"2014","Summer",1,2014-06-08 12:00:00,"Greenlake Field 1","Sluggernauts","Eagle Bait",16,16
 "2014","Summer",1,2014-06-08 13:30:00,"Greenlake Field 1","Your Mom Plays Softball","Dirty Mike And The Boys",17,5
 "2014","Summer",1,2014-06-08 15:00:00,"Greenlake Field 1","Sloppy Bunts","Balls Deep",13,16
 "2014","Summer",1,2014-06-08 16:30:00,"Greenlake Field 1","No Glove, No Love","Son Of Pitches",6,5
@@ -180,11 +180,11 @@
 "2014","Summer",2,2014-06-22 16:30:00,"Greenlake Field 1","Oregon Sucks!","Afternoon Delight",10,8
 "2014","Summer",2,2014-06-22 18:00:00,"Greenlake Field 1","Your Mom Plays Softball","Oregon Sucks!",19,5
 "2014","Summer",2,2014-06-22 12:00:00,"Greenlake Field 2","No Glove, No Love","Sloppy Bunts",5,14
-"2014","Summer",2,2014-06-22 13:30:00,"Greenlake Field 2","No Glove, No Love","#Blessed",6,11
+"2014","Summer",2,2014-06-22 13:30:00,"Greenlake Field 2","No Glove, No Love","Eagle Bait",6,11
 "2014","Summer",2,2014-06-22 15:00:00,"Greenlake Field 2","Gomicroamadub","Stranger Danger",13,10
 "2014","Summer",2,2014-06-22 16:30:00,"Greenlake Field 2","Greenlake Jackals","The Joel Duck Experience",8,7
 "2014","Summer",2,2014-06-22 18:00:00,"Greenlake Field 2","Greenlake Jackals","Balls Deep",11,9
-"2014","Summer",3,2014-06-29 12:00:00,"Greenlake Field 1","#Blessed","Balls Deep",13,22
+"2014","Summer",3,2014-06-29 12:00:00,"Greenlake Field 1","Eagle Bait","Balls Deep",13,22
 "2014","Summer",3,2014-06-29 15:00:00,"Greenlake Field 1","Gomicroamadub","Son Of Pitches",8,12
 "2014","Summer",3,2014-06-29 16:30:00,"Greenlake Field 1","Gomicroamadub","Sloppy Bunts",16,7
 "2014","Summer",3,2014-06-29 18:00:00,"Greenlake Field 1","Greenlake Jackals","No Glove, No Love",23,13
@@ -196,7 +196,7 @@
 "2014","Summer",4,2014-07-13 12:00:00,"Greenlake Field 1","Your Mom Plays Softball","Afternoon Delight",20,4
 "2014","Summer",4,2014-07-13 13:30:00,"Greenlake Field 1","Fowl Balls","Find The Holes",19,19
 "2014","Summer",4,2014-07-13 15:00:00,"Greenlake Field 1","Fowl Balls","The Joel Duck Experience",32,5
-"2014","Summer",4,2014-07-13 16:30:00,"Greenlake Field 1","The Joel Duck Experience","#Blessed",18,15
+"2014","Summer",4,2014-07-13 16:30:00,"Greenlake Field 1","The Joel Duck Experience","Eagle Bait",18,15
 "2014","Summer",4,2014-07-13 18:00:00,"Greenlake Field 1","Oregon Sucks!","Here For The Beer",24,7
 "2014","Summer",4,2014-07-13 13:30:00,"Greenlake Field 2","Sloppy Bunts","Son Of Pitches",19,16
 "2014","Summer",4,2014-07-13 15:00:00,"Greenlake Field 2","Sluggernauts","Dirty Mike And The Boys",15,24
@@ -204,7 +204,7 @@
 "2014","Summer",5,2014-07-20 12:00:00,"Greenlake Field 1","Find The Holes","Son Of Pitches",17,6
 "2014","Summer",5,2014-07-20 13:30:00,"Greenlake Field 1","No Glove, No Love","Here For The Beer",3,8
 "2014","Summer",5,2014-07-20 15:00:00,"Greenlake Field 1","No Glove, No Love","Gomicroamadub",8,10
-"2014","Summer",5,2014-07-20 16:30:00,"Greenlake Field 1","Afternoon Delight","#Blessed",15,6
+"2014","Summer",5,2014-07-20 16:30:00,"Greenlake Field 1","Afternoon Delight","Eagle Bait",15,6
 "2014","Summer",5,2014-07-20 13:30:00,"Greenlake Field 2","Sluggernauts","Balls Deep",11,3
 "2014","Summer",5,2014-07-20 15:00:00,"Greenlake Field 2","Your Mom Plays Softball","Sluggernauts",21,0
 "2014","Summer",5,2014-07-20 16:30:00,"Greenlake Field 2","Fowl Balls","Stranger Danger",35,6
@@ -212,7 +212,7 @@
 "2014","Summer",6,2014-07-27 13:30:00,"Greenlake Field 1","Son Of Pitches","Balls Deep",15,10
 "2014","Summer",6,2014-07-27 15:00:00,"Greenlake Field 1","Son Of Pitches","Stranger Danger",17,11
 "2014","Summer",6,2014-07-27 16:30:00,"Greenlake Field 1","Stranger Danger","No Glove, No Love",5,10
-"2014","Summer",6,2014-07-27 18:00:00,"Greenlake Field 1","Greenlake Jackals","#Blessed",16,19
+"2014","Summer",6,2014-07-27 18:00:00,"Greenlake Field 1","Greenlake Jackals","Eagle Bait",16,19
 "2014","Summer",6,2014-07-27 12:00:00,"Greenlake Field 2","Sloppy Bunts","Sluggernauts",11,26
 "2014","Summer",6,2014-07-27 13:30:00,"Greenlake Field 2","Dirty Mike And The Boys","Afternoon Delight",8,11
 "2014","Summer",6,2014-07-27 15:00:00,"Greenlake Field 2","Your Mom Plays Softball","Find The Holes",36,9
@@ -225,11 +225,11 @@
 "2014","Summer",7,2014-08-03 18:00:00,"Greenlake Field 1","Dirty Mike And The Boys","Oregon Sucks!",11,12
 "2014","Summer",7,2014-08-03 12:00:00,"Greenlake Field 2","Stranger Danger","Balls Deep",16,23
 "2014","Summer",7,2014-08-03 13:30:00,"Greenlake Field 2","Balls Deep","Sluggernauts",11,26
-"2014","Summer",7,2014-08-03 15:00:00,"Greenlake Field 2","No Glove, No Love","#Blessed",3,9
+"2014","Summer",7,2014-08-03 15:00:00,"Greenlake Field 2","No Glove, No Love","Eagle Bait",3,9
 "2014","Summer",7,2014-08-03 16:30:00,"Greenlake Field 2","The Joel Duck Experience","Sloppy Bunts",15,6
 "2014","Summer",7,2014-08-03 18:00:00,"Greenlake Field 2","The Joel Duck Experience","Greenlake Jackals",20,31
 "2014","Summer",8,2014-08-10 12:00:00,"Lower Woodland PF Field 6","Son Of Pitches","Sluggernauts",9,24
-"2014","Summer",8,2014-08-10 13:30:00,"Lower Woodland PF Field 6","#Blessed","Greenlake Jackals",7,24
+"2014","Summer",8,2014-08-10 13:30:00,"Lower Woodland PF Field 6","Eagle Bait","Greenlake Jackals",7,24
 "2014","Summer",8,2014-08-10 15:00:00,"Lower Woodland PF Field 6","Sluggernauts","Greenlake Jackals",12,7
 "2014","Summer",8,2014-08-10 16:30:00,"Lower Woodland PF Field 6","Fowl Balls","Oregon Sucks!",11,9
 "2014","Summer",8,2014-08-10 18:00:00,"Lower Woodland PF Field 6","Fowl Balls","Your Mom Plays Softball",3,26
@@ -346,7 +346,7 @@
 "2016","Fall",5,2016-09-18 15:00:00,"Lower Woodland PF Field 6","Pinehurst Pounders","Kyle 4 President",24,10
 "2016","Fall",5,2016-09-18 16:30:00,"Lower Woodland PF Field 6","Chico's Bail Bonds","Pinehurst Pounders",13,9
 "2016","Fall",5,2016-09-18 18:00:00,"Lower Woodland PF Field 6","Chico's Bail Bonds","Arbornauts",21,8
-"2016","Spring",1,2016-03-20 12:00:00,"Greenlake Field 1","#Blessed","Afternoon Delight",10,11
+"2016","Spring",1,2016-03-20 12:00:00,"Greenlake Field 1","Eagle Bait","Afternoon Delight",10,11
 "2016","Spring",1,2016-03-20 13:30:00,"Greenlake Field 1","No Pants Party","Afternoon Delight",21,5
 "2016","Spring",1,2016-03-20 15:00:00,"Greenlake Field 1","Look At This F$%@Ing Guy","Pitchbook Panthers",17,1
 "2016","Spring",1,2016-03-20 16:30:00,"Greenlake Field 1","Look At This F$%@Ing Guy","Rich And Jay's Love Children",12,6
@@ -357,15 +357,15 @@
 "2016","Spring",1,2016-03-20 18:00:00,"Greenlake Field 2","Flesh-Eating Sharks","Oregon Sucks!",11,5
 "2016","Spring",2,2016-04-03 12:00:00,"Greenlake Field 1","Flesh-Eating Sharks","No Pants Party",2,17
 "2016","Spring",2,2016-04-03 13:30:00,"Greenlake Field 1","Flesh-Eating Sharks","Afternoon Delight",5,8
-"2016","Spring",2,2016-04-03 15:00:00,"Greenlake Field 1","#Blessed","Thigh Power",7,24
-"2016","Spring",2,2016-04-03 16:30:00,"Greenlake Field 1","Rich And Jay's Love Children","#Blessed",16,6
+"2016","Spring",2,2016-04-03 15:00:00,"Greenlake Field 1","Eagle Bait","Thigh Power",7,24
+"2016","Spring",2,2016-04-03 16:30:00,"Greenlake Field 1","Rich And Jay's Love Children","Eagle Bait",16,6
 "2016","Spring",2,2016-04-03 18:00:00,"Greenlake Field 1","Oregon Sucks!","Look At This F$%@Ing Guy",9,13
 "2016","Spring",2,2016-04-03 12:00:00,"Greenlake Field 2","Stranger Danger","Balls Deep",15,22
 "2016","Spring",2,2016-04-03 13:30:00,"Greenlake Field 2","Pitch Slap","Pitchbook Panthers",9,5
 "2016","Spring",2,2016-04-03 15:00:00,"Greenlake Field 2","Pitches Be Trippin'","Ice Cold Pitchers",13,9
 "2016","Spring",2,2016-04-03 16:30:00,"Greenlake Field 2","All About That Base","Hit Long & Prosper",16,4
 "2016","Spring",2,2016-04-03 18:00:00,"Greenlake Field 2","Hitmen","Hit Long & Prosper",22,13
-"2016","Spring",3,2016-04-10 12:00:00,"Greenlake Field 1","Flesh-Eating Sharks","#Blessed",17,13
+"2016","Spring",3,2016-04-10 12:00:00,"Greenlake Field 1","Flesh-Eating Sharks","Eagle Bait",17,13
 "2016","Spring",3,2016-04-10 13:30:00,"Greenlake Field 1","All About That Base","Hitmen",19,22
 "2016","Spring",3,2016-04-10 15:00:00,"Greenlake Field 1","Pitches Be Trippin'","Pitchbook Panthers",13,27
 "2016","Spring",3,2016-04-10 16:30:00,"Greenlake Field 1","Pitchbook Panthers","Ice Cold Pitchers",6,19
@@ -378,7 +378,7 @@
 "2016","Spring",4,2016-04-17 12:00:00,"Greenlake Field 1","Pitches Be Trippin'","Balls Deep",18,12
 "2016","Spring",4,2016-04-17 13:30:00,"Greenlake Field 1","Hitmen","Pitches Be Trippin'",13,21
 "2016","Spring",4,2016-04-17 15:00:00,"Greenlake Field 1","Hitmen","Pitchbook Panthers",22,21
-"2016","Spring",4,2016-04-17 16:30:00,"Greenlake Field 1","Look At This F$%@Ing Guy","#Blessed",15,4
+"2016","Spring",4,2016-04-17 16:30:00,"Greenlake Field 1","Look At This F$%@Ing Guy","Eagle Bait",15,4
 "2016","Spring",4,2016-04-17 18:00:00,"Greenlake Field 1","Oregon Sucks!","Afternoon Delight",17,10
 "2016","Spring",4,2016-04-17 12:00:00,"Greenlake Field 2","Hit Long & Prosper","Pitch Slap",4,40
 "2016","Spring",4,2016-04-17 13:30:00,"Greenlake Field 2","Pitch Slap","Ice Cold Pitchers",11,9
@@ -389,7 +389,7 @@
 "2016","Spring",5,2016-04-24 13:30:00,"Greenlake Field 1","Stranger Danger","Hitmen",13,17
 "2016","Spring",5,2016-04-24 15:00:00,"Greenlake Field 1","Pitches Be Trippin'","Pitch Slap",17,24
 "2016","Spring",5,2016-04-24 16:30:00,"Greenlake Field 1","Oregon Sucks!","No Pants Party",20,21
-"2016","Spring",5,2016-04-24 18:00:00,"Greenlake Field 1","Oregon Sucks!","#Blessed",11,10
+"2016","Spring",5,2016-04-24 18:00:00,"Greenlake Field 1","Oregon Sucks!","Eagle Bait",11,10
 "2016","Spring",5,2016-04-24 12:00:00,"Greenlake Field 2","All About That Base","Pitchbook Panthers",11,7
 "2016","Spring",5,2016-04-24 13:30:00,"Greenlake Field 2","All About That Base","Ice Cold Pitchers",6,12
 "2016","Spring",5,2016-04-24 15:00:00,"Greenlake Field 2","Look At This F$%@Ing Guy","Thigh Power",9,3
@@ -397,7 +397,7 @@
 "2016","Spring",5,2016-04-24 18:00:00,"Greenlake Field 2","Rich And Jay's Love Children","Flesh-Eating Sharks",23,12
 "2016","Spring",6,2016-05-01 12:00:00,"Greenlake Field 1","Stranger Danger","Ice Cold Pitchers",11,18
 "2016","Spring",6,2016-05-01 13:30:00,"Greenlake Field 1","Flesh-Eating Sharks","Look At This F$%@Ing Guy",10,13
-"2016","Spring",6,2016-05-01 15:00:00,"Greenlake Field 1","No Pants Party","#Blessed",25,3
+"2016","Spring",6,2016-05-01 15:00:00,"Greenlake Field 1","No Pants Party","Eagle Bait",25,3
 "2016","Spring",6,2016-05-01 16:30:00,"Greenlake Field 1","No Pants Party","Thigh Power",18,5
 "2016","Spring",6,2016-05-01 18:00:00,"Greenlake Field 1","Oregon Sucks!","Thigh Power",17,11
 "2016","Spring",6,2016-05-01 12:00:00,"Greenlake Field 2","Pitches Be Trippin'","All About That Base",15,29
@@ -480,6 +480,24 @@
 "2016","Summer",8,2016-07-31 15:00:00,"Greenlake Field 1","Pinjers","The Participators",17,24
 "2016","Summer",8,2016-07-31 16:30:00,"Greenlake Field 1","Oregon Sucks!","Crabby Swingers",25,17
 "2016","Summer",8,2016-07-31 18:00:00,"Greenlake Field 1","Oregon Sucks!","99 First World Problems",13,25
+"2017","Fall",1,2017-08-13 12:00:00,"Lower Woodland PF Field 3","Balls Deep","Not Here To Make Friends",11,12
+"2017","Fall",1,2017-08-13 13:30:00,"Lower Woodland PF Field 3","Balls Deep","Stranger Danger",13,24
+"2017","Fall",1,2017-08-13 16:30:00,"Lower Woodland PF Field 3","Seattle Shaggy Muskrats","The Crows",6,11
+"2017","Fall",1,2017-08-13 18:00:00,"Lower Woodland PF Field 3","We Love Dishwashers","Suicide Squeeze Squad",28,8
+"2017","Fall",1,2017-08-13 12:00:00,"Lower Woodland PF Field 6","Seattle Seattle Mariners","Bottom Of The Fifths",7,25
+"2017","Fall",1,2017-08-13 13:30:00,"Lower Woodland PF Field 6","Flesh Eating Sharks","Bottom Of The Fifths",10,34
+"2017","Fall",1,2017-08-13 15:00:00,"Lower Woodland PF Field 6","Flesh Eating Sharks","Eagle Bait",8,22
+"2017","Fall",1,2017-08-13 16:30:00,"Lower Woodland PF Field 6","Eagle Bait","Hitmen",11,15
+"2017","Fall",1,2017-08-13 18:00:00,"Lower Woodland PF Field 6","Arbornauts","Hitmen",28,0
+"2017","Fall",2,2017-08-20 12:00:00,"Lower Woodland PF Field 3","Not Here To Make Friends","Suicide Squeeze Squad",26,3
+"2017","Fall",2,2017-08-20 13:30:00,"Lower Woodland PF Field 3","Not Here To Make Friends","Hitmen",16,15
+"2017","Fall",2,2017-08-20 15:00:00,"Lower Woodland PF Field 3","Flesh Eating Sharks","Hitmen",21,22
+"2017","Fall",2,2017-08-20 16:30:00,"Lower Woodland PF Field 3","Flesh Eating Sharks","The Crows",21,23
+"2017","Fall",2,2017-08-20 18:00:00,"Lower Woodland PF Field 3","Arbornauts","Balls Deep",12,8
+"2017","Fall",2,2017-08-20 12:00:00,"Lower Woodland PF Field 6","Seattle Seattle Mariners","Seattle Shaggy Muskrats",7,10
+"2017","Fall",2,2017-08-20 13:30:00,"Lower Woodland PF Field 6","Seattle Seattle Mariners","We Love Dishwashers",17,6
+"2017","Fall",2,2017-08-20 15:00:00,"Lower Woodland PF Field 6","Bottom Of The Fifths","Eagle Bait",20,11
+"2017","Fall",2,2017-08-20 16:30:00,"Lower Woodland PF Field 6","Bottom Of The Fifths","Stranger Danger",19,12
 "2017","Spring",1,2017-03-19 12:00:00,"Greenlake Field 1","Balls Deep","Eagle Bait",4,8
 "2017","Spring",1,2017-03-19 13:30:00,"Greenlake Field 1","Cfpr","Sluggernauts",13,12
 "2017","Spring",1,2017-03-19 15:00:00,"Greenlake Field 1","Look At This F$%@Ing Guy","Pitch Slap",11,10
