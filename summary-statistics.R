@@ -43,7 +43,7 @@ ggplot(to_plot, aes(x = Score, fill = Outcome)) +
 # ---------------------------------------------------------------------------
 # selected teams ------------------------------------------------------------
 # ---------------------------------------------------------------------------
-filter(combined, Team %in% c("Stranger Danger", "Balls Deep", "Hitmen", "#Blessed")) %>% 
+filter(combined, Team %in% c("Stranger Danger", "Balls Deep", "Hitmen", "Eagle Bait")) %>% 
     arrange(Outcome == "Tie") %>% 
     ggplot(aes(x = Year, y = Score - OpponentScore, color = Outcome)) + 
         geom_point() + scale_color_brewer(type = "qual", palette = 2) + 
@@ -57,22 +57,6 @@ combined %>%
         Loss = sum(Outcome == "Loss")) %>% 
         filter(n > 1) %>% 
         arrange((Win + Tie / 2) / n)
-
-selected_teams <- function(y) {
-    by_season %>% 
-        group_by(Team) %>% 
-        filter(n() > 3) %>% 
-        ungroup() %>% 
-        mutate(Team = str_replace(Team, " ", "\n")) %>% 
-        ggplot(aes_string(x = "Team", y = y)) +        
-        geom_boxplot() + geom_point(aes(color = Year))
-}
-
-selected_teams("pct") + 
-    ggtitle("Average winning percent by season for\nteams with more than 3 seasons")
-
-selected_teams("margin") + 
-    ggtitle("Average margin by season for\nteams with more than 3 seasons")
 
 # ---------------------------------------------------------------------------
 # game-level summaries ----------------------------------------------------
@@ -110,7 +94,7 @@ ggplot(games, mapping = aes(x = GameN, y = Record, color = Highlight)) +
     scale_color_manual(values = c(scale_color_brewer(palette = "Set1")$palette(length(highlight_teams)), "grey80")) +
     ggtitle("Complete record")
 
-ggplot(games, mapping = aes(x = GameN, y = Record, color = Highlight)) + 
+ggplot(games, mapping = aes(x = GameN, y = Margin, color = Highlight)) + 
     geom_line(aes(group = Team)) + 
     geom_line(data = high, aes(group = Team)) + 
     # color by Set1 palette except for "other" teams, which should be grey
@@ -133,6 +117,23 @@ by_season <- combined %>%
     mutate(YearSeason = paste(Year, as.character(Season)), 
         YearSeason = factor(YearSeason, levels = unique(YearSeason)))
 
+selected_teams <- function(y) {
+    by_season %>% 
+        group_by(Team) %>% 
+        filter(n() > 3) %>% 
+        ungroup() %>% 
+        mutate(Team = str_replace(Team, " ", "\n")) %>% 
+        ggplot(aes_string(x = "Team", y = y)) +        
+        geom_boxplot() + geom_point(aes(color = Year))
+}
+
+selected_teams("pct") + 
+    ggtitle("Average winning percent by season for\nteams with more than 3 seasons")
+
+selected_teams("margin") + 
+    ggtitle("Average margin by season for\nteams with more than 3 seasons")
+
+
 season_plot <- function(...) {
     ggplot(by_season, 
         aes_string(color = 'Team == "Stranger Danger"', x = "YearSeason", ...)) + 
@@ -152,7 +153,7 @@ season_plot(y = "net") +
 
 by_season %>% 
     ggplot(aes(x = pct, y = margin, color = Team == "Stranger Danger")) +
-    geom_point() + facet_grid(Season ~ Year) + labs(color = "Us?") +
+    geom_point() + facet_grid(Year ~ Season) + labs(color = "Us?") +
     ggtitle("Average score margin against winning percent")
 
 seasonal_record <- combined %>% 
