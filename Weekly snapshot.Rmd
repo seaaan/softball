@@ -10,15 +10,12 @@ combined <- get_tidy_game_data()
 options(tibble.width = Inf)
 THIS_SEASON <- "Fall"
 THIS_YEAR <- 2017
-COMPETITOR <- "Seattle Seattle Mariners"
 ```
 
 ## This season
 ```{r}
 season <- combined %>% 
-    filter(Season == THIS_SEASON, Year == THIS_YEAR) %>% 
-    mutate(Highlight = ifelse(Team %in% c("Stranger Danger", COMPETITOR), Team, "Other"), 
-        Highlight = factor(Highlight, levels = c("Stranger Danger", COMPETITOR, "Other")))
+    filter(Season == THIS_SEASON, Year == THIS_YEAR) 
 
 games <- season %>% 
     group_by(Team) %>% 
@@ -27,7 +24,7 @@ games <- season %>%
     arrange(desc((Win + (Tie / 2)) / Games))
 
 scores <- season %>% 
-    group_by(Team, Highlight) %>% 
+    group_by(Team) %>% 
     summarise(ScoredPerGame = round(mean(Score), 1), 
         AllowedPerGame = round(mean(OpponentScore), 1),
         Margin = round(mean(Score - OpponentScore), 1), 
@@ -37,20 +34,19 @@ scores <- season %>%
 
 print(games, n = Inf)
 
-print(select(scores, -Highlight), n = Inf)
+print(scores, n = Inf)
 
-ggplot(scores, aes(x = AllowedPerGame, y = ScoredPerGame, color = Highlight)) + 
+ggplot(scores, aes(x = AllowedPerGame, y = ScoredPerGame, color = Team)) + 
     geom_abline(slope = 1, intercept = c(0, 0)) +
-    geom_point() + labs(color = "Us?") + 
+    geom_point() + 
     xlim(c(0, max(scores$AllowedPerGame))) + 
     ylim(c(0, max(scores$ScoredPerGame))) 
 
-ggplot(scores, aes(x = TotalRunsAllowed, y = TotalRunsScored, color = Highlight)) + 
+ggplot(scores, aes(x = TotalRunsAllowed, y = TotalRunsScored, color = Team)) + 
     geom_abline(slope = 1, intercept = c(0, 0)) +
-    geom_point() + labs(color = "Us?") + 
+    geom_point() + 
     xlim(c(0, max(scores$TotalRunsAllowed))) + 
     ylim(c(0, max(scores$TotalRunsScored))) 
-
 ```
 
 ## All time statistics
@@ -62,17 +58,9 @@ game_n <- combined %>%
     mutate(GameN = 1:n())
 
 highlight_teams <- combined %>% 
-    filter(Team == "Stranger Danger") %>% 
-    group_by(Opponent) %>% 
-    summarise(n=n()) %>% 
-    filter(n > 2) %>%  
-    .$Opponent
-
-if (COMPETITOR %in% highlight_teams) {
-    highlight_teams <- c(highlight_teams, "Stranger Danger")  
-} else {
-    highlight_teams <- c(highlight_teams, COMPETITOR, "Stranger Danger")
-}
+    filter(Season == THIS_SEASON, Year == THIS_YEAR) %>% 
+    .$Opponent %>% 
+    unique()
 
 games <- combined %>% 
     merge(game_n) %>% 
@@ -81,77 +69,19 @@ games <- combined %>%
     mutate(Record = cumsum(Outcome == "Win") / seq_along(Outcome), 
         Margin = cumsum(Score - OpponentScore) / seq_along(Outcome), 
         runfrac = cummean(Score / (Score + OpponentScore))) %>% 
-    # pick out certain teams to highlight
+    # highlight teams from this season
     mutate(Highlight = ifelse(Team %in% highlight_teams, Team, "Other")) %>% 
     mutate(Highlight = factor(Highlight, levels = c(highlight_teams, "Other"))) %>% 
     arrange(Highlight)
 
 high <- filter(games, Highlight != "Other")
 ggplot(games, mapping = aes(x = GameN, y = Record, color = Highlight)) + 
-    geom_line(aes(group = Team)) + 
+    geom_line(aes(group = Team), color = "grey") + 
     geom_line(data = high, aes(group = Team)) + 
-    # color by Set1 palette except for "other" teams, which should be grey
-    scale_color_manual(values = c(scale_color_brewer(palette = "Set1")$palette(length(highlight_teams)), "grey80")) +
     ggtitle("Complete record")
 
 ggplot(games, mapping = aes(x = GameN, y = Margin, color = Highlight)) + 
-    geom_line(aes(group = Team)) + 
+    geom_line(aes(group = Team), color = "grey") + 
     geom_line(data = high, aes(group = Team)) + 
-    # color by Set1 palette except for "other" teams, which should be grey
-    scale_color_manual(values = c(scale_color_brewer(palette = "Set1")$palette(length(highlight_teams)), "grey80")) +
     ggtitle("Complete margin")
-
-```
-
-
-## Next week
-```{r}
-# convert relative records and runs scored to win probabilities
-# prob = (difference in records) / 2 + 0.5 so 100% and 0% gets 100% prob
-# prob = (difference in avg pct runs scored per game) / 2 + 0.5
-record_run <- games %>%
-        filter(Team %in% c("Stranger Danger", COMPETITOR)) %>% 
-        select(Record, runfrac, Team, GameN) %>% 
-    gather(Model, Rating, -Team, -GameN)
-
-record_run_probs <- record_run %>%  
-    group_by(Model) %>% 
-    arrange(Team) %>% 
-    summarise(prob = 0.5 + (Rating[1] - Rating[2]) / 2, 
-        Arguments = "", Outcome = ifelse(Model == "runfrac", "score", "winloss")[1], 
-        Team1 = Team[1]) %>% 
-    arrange(desc(prob))
-
-# convert elo/glicko/steph ratings into win probability
-rate <- function(x, y) {
-    a <- 10^(x/400)
-    b <- 10^(y/400)
-    a / (a + b)
-}
-
-all_models <- read.csv("model-outputs/all-models.csv", stringsAsFactors = FALSE)
-
-# convert ratings into probs
-model_probs <- all_models %>% 
-    filter(Game == max(Game), Team %in% c("Stranger Danger", COMPETITOR)) %>% 
-    arrange(Team) %>% 
-    group_by(Model, Arguments, Outcome) %>% 
-    summarise(prob = rate(Rating[1], Rating[2]), Team1 = Team[1]) 
-
-# display probabilities
-bind_rows(record_run_probs, model_probs) %>%
-    mutate(prob = ifelse(Team1 == "Stranger Danger", prob, 1 - prob)) %>% 
-    select(Model, Arguments, Outcome, prob) %>% 
-    arrange(desc(prob))
-
-all_models %>% filter(Team %in% c("Stranger Danger", COMPETITOR)) %>%
-    ggplot(aes(y = Rating, x = Game, color = Team)) + geom_path() + 
-    facet_grid(Model ~ Outcome)
-
-ggplot(record_run, aes(x = GameN, y = Rating, color = Team)) + geom_path() +
-    facet_wrap(~Model)
-
-
-rolling_average <- function(x, n) stats::filter(x,rep(1/n,n), sides=1) %>% as.numeric()
-
 ```
