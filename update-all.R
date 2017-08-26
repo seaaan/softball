@@ -12,3 +12,6 @@ rmarkdown::render("Scouting-report.Rmd")
 
 # Run the scoring distribution analysis
 rmarkdown::render("How-to-win-a-game.Rmd")
+
+# Run the season summary analysis
+rmarkdown::render("Season-summary.Rmd")
