@@ -1,5 +1,5 @@
 ---
-title: "Weekly snapshot"
+title: "Summary of the current season"
 output: 
     html_document:
         theme: sandstone
