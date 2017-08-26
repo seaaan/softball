@@ -1,12 +1,6 @@
-library(PlayerRatings)
-source("helpers.R")
+source("R/helpers.R")
 
 # could I adjust weights to more heavily weight games from the current season?
-
-
-
-
-
 
 win_loss_outcome <- function(x, y) {
     z <- x-y

@@ -1,5 +1,4 @@
-library(rvest)
-source("helpers.R")
+source("R/helpers.R")
 
 # take an html_table containing a week's games and return it as a 
 # useful data frame

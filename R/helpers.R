@@ -2,6 +2,8 @@ library(ggplot2)
 library(tidyr)
 library(dplyr)
 library(stringr)
+library(rvest)
+library(PlayerRatings)
 
 get_game_data <- function() {
     load("data/game-data.Rda")
