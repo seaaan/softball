@@ -7,7 +7,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-source("helpers.R")
+source("R/helpers.R")
 combined <- get_tidy_game_data()
 ```
 
