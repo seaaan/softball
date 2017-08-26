@@ -1,6 +1,8 @@
 ---
 title: "Scouting report"
-output: html_document
+output: 
+    html_document:
+        theme: sandstone
 ---
 
 ```{r setup, include=FALSE}
@@ -16,7 +18,7 @@ COMPETITOR <- "Eagle Bait"
 
 This is a scouting report on `r COMPETITOR`. The goal is to evaluate how strong they are compared to Stranger Danger, so the focus is on the current season, but earlier data are also included. Forfeits are not included because they don't provide information about a team's strength.
 
-## This season
+### This season
 ```{r}
 season <- combined %>% 
     filter(Season == THIS_SEASON, Year == THIS_YEAR, Team %in%
@@ -41,14 +43,21 @@ pander::pander(games)
 
 This table shows the outcome of the non-forfeited games played this season (`r THIS_SEASON` `r THIS_YEAR`) by `r COMPETITOR` and Stranger Danger. `r games$Team[1]` is stronger by this metric. 
 
+<br>
+
 ```{r}
+colnames(scores) <- str_replace(colnames(scores), "Avg", "")
+colnames(scores) <- str_replace(colnames(scores), "PerGame", "")
+
 pander::pander(scores)
 ```
 
 This table shows the average number of runs scored and allowed from this season, as well as the average margin (the difference between the number of runs scored and allowed). `r scores$Team[1]` is stronger by this metric. 
 
-## All time statistics
+### All time statistics
 In this section, we'll look at all of the games ever played by Stranger Danger, and all of the games ever played by `r COMPETITOR` during seasons when Stranger Danger was also playing. 
+
+<br>
 
 ```{r}
 all_time <- combined %>% 
@@ -72,6 +81,8 @@ pander::pander(all_time_win_loss)
 ```
 
 This table shows the outcome of the non-forfeited games ever played by `r COMPETITOR` and Stranger Danger. `r all_time_win_loss$Team[1]` is stronger by this metric. 
+
+<br>
 
 ```{r}
 game_n <- combined %>%
@@ -102,11 +113,18 @@ ggplot(games, mapping = aes(x = GameN, y = Record * 100, color = Team)) +
 
 This figure shows the cumulative percentage of games won across all games played for both teams. Stranger Danger is heavily weighed down by early seasons where we got wiped out. 
 
+<br>
+
 ```{r}
+colnames(all_time_scores) <- str_replace(colnames(all_time_scores), "Avg", "")
+colnames(all_time_scores) <- str_replace(colnames(all_time_scores), "PerGame", "")
+
 pander::pander(all_time_scores)
 ```
 
 This table shows the average number of runs scored and allowed from all seasons, as well as the average margin (the difference between the number of runs scored and allowed). `r all_time_scores$Team[1]` is stronger by this metric. 
+
+<br>
 
 ```{r}
 ggplot(games, mapping = aes(x = GameN, y = Margin, color = Team)) + 
@@ -122,7 +140,7 @@ This figure shows the cumulative average run margin across all games played for 
 
 Stranger Danger and `r COMPETITOR` have played each other `r filter(combined, Team == "Stranger Danger", Opponent == COMPETITOR) %>% nrow()` times. Stranger Danger won `r filter(combined, Team == "Stranger Danger", Opponent == COMPETITOR) %>% summarise(wins = sum(Outcome == "Win")) %>% .$wins` of those games and `r filter(combined, Team == "Stranger Danger", Opponent == COMPETITOR) %>% summarise(ties = sum(Outcome == "Tie")) %>% .$ties` ended in a tie. 
 
-## Predicted outcome
+### Predicted outcome
 To predict who will win a game between Stranger Danger and `r COMPETITOR`, a number of models are used. Three of the models ("elo", "steph", and "glicko") were developed to predict the outcome of chess matches based on past performance see [here](http://www.glicko.net/research/acjpaper.pdf) for details. Each of these models is run two ways: with the outcome of the game being a win or a loss and with the outcome of the game being the fraction of the total runs scored. Two additional models are used, which are simply a comparison of the two team's total records and margins.  
 
 ```{r}
@@ -170,6 +188,8 @@ bind_rows(record_run_probs, model_probs) %>%
 
 This table shows the probability of a win for Stranger Danger in the next game estimated by all of the different models. A probability of 1 would mean that the model predicts Stranger Danger to have a 100% chance of winning. A probability of 0 would mean that Stranger Danger has a 0% chance of winning. The models differ in their assumptions and the information they take into account, so a range of probabilities are seen. 
 
+<br>
+
 ```{r}
 all_models %>% filter(Team %in% c("Stranger Danger", COMPETITOR)) %>%
     ggplot(aes(y = Rating, x = Game, color = Team)) + geom_path() + 
@@ -177,6 +197,8 @@ all_models %>% filter(Team %in% c("Stranger Danger", COMPETITOR)) %>%
 ```
 
 These graphs show how the model ratings changed over time. Before the first game, in all of these models teams are arbitrarily assigned a rating of 2200. Their rating changes over time from there based on their performance. Higher ratings are better. 
+
+<br>
 
 ```{r}
 ggplot(record_run, aes(x = GameN, y = Rating, color = Team)) + geom_path() +
@@ -186,3 +208,5 @@ ggplot(record_run, aes(x = GameN, y = Rating, color = Team)) + geom_path() +
 These graphs show how the model ratings changed over time for the models based on overall win/loss records and fractions of runs scored per game. In this case, the rating ranges from 0 to 1, with higher numbers again being better. 
 
 The win/loss probabilities displayed above are based on the most recent rating for each model. 
+
+<br>
