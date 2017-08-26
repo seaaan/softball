@@ -32,9 +32,9 @@ games <- season %>%
 
 scores <- season %>% 
     group_by(Team) %>% 
-    summarise(AvgScoredPerGame = round(mean(Score), 1), 
-        AvgAllowedPerGame = round(mean(OpponentScore), 1),
-        AvgMargin = round(mean(Score - OpponentScore), 1)) %>% 
+    summarise(Scored = round(mean(Score), 1), 
+        Allowed = round(mean(OpponentScore), 1),
+        Margin = round(mean(Score - OpponentScore), 1)) %>% 
     # order by games df
     arrange(desc(AvgMargin))
 
@@ -46,9 +46,6 @@ This table shows the outcome of the non-forfeited games played this season (`r T
 <br>
 
 ```{r}
-colnames(scores) <- str_replace(colnames(scores), "Avg", "")
-colnames(scores) <- str_replace(colnames(scores), "PerGame", "")
-
 pander::pander(scores)
 ```
 
@@ -71,9 +68,9 @@ all_time_win_loss <- all_time %>%
 
 all_time_scores <- all_time %>% 
     group_by(Team) %>% 
-    summarise(AvgScoredPerGame = round(mean(Score), 1), 
-        AvgAllowedPerGame = round(mean(OpponentScore), 1),
-        AvgMargin = round(mean(Score - OpponentScore), 1)) %>% 
+    summarise(Scored = round(mean(Score), 1), 
+        Allowed = round(mean(OpponentScore), 1),
+        Margin = round(mean(Score - OpponentScore), 1)) %>% 
     # order by games df
     arrange(desc(AvgMargin))
 
@@ -116,9 +113,6 @@ This figure shows the cumulative percentage of games won across all games played
 <br>
 
 ```{r}
-colnames(all_time_scores) <- str_replace(colnames(all_time_scores), "Avg", "")
-colnames(all_time_scores) <- str_replace(colnames(all_time_scores), "PerGame", "")
-
 pander::pander(all_time_scores)
 ```
 
