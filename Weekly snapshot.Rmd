@@ -1,18 +1,20 @@
 ---
 title: "Weekly snapshot"
-output: html_document
+output: 
+    html_document:
+        theme: sandstone
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-source("helpers.R")
+source("R/helpers.R")
 combined <- get_tidy_game_data()
 options(tibble.width = Inf)
 THIS_SEASON <- "Fall"
 THIS_YEAR <- 2017
 ```
 
-## This season
+### This season
 ```{r}
 season <- combined %>% 
     filter(Season == THIS_SEASON, Year == THIS_YEAR) 
@@ -25,31 +27,61 @@ games <- season %>%
 
 scores <- season %>% 
     group_by(Team) %>% 
-    summarise(ScoredPerGame = round(mean(Score), 1), 
-        AllowedPerGame = round(mean(OpponentScore), 1),
-        Margin = round(mean(Score - OpponentScore), 1), 
-        TotalRunsScored = sum(Score), TotalRunsAllowed = sum(OpponentScore)) %>% 
+    summarise(Scored = round(mean(Score), 1), 
+        Allowed = round(mean(OpponentScore), 1),
+        Margin = round(mean(Score - OpponentScore), 1)) %>% 
     # order by games df
     arrange(desc(Margin))
 
-print(games, n = Inf)
+pander::pander(games)
+```
+This table shows the outcome of the non-forfeited games played this season (`r THIS_SEASON` `r THIS_YEAR`). Forfeits are not included because they don't reflect skill. 
 
-print(scores, n = Inf)
+<br>
 
-ggplot(scores, aes(x = AllowedPerGame, y = ScoredPerGame, color = Team)) + 
+```{r}
+pander::pander(scores)
+```
+This table shows the average number of runs scored and allowed from this seasons, as well as the average margin (the difference between the number of runs scored and allowed). 
+
+<br>
+
+```{r}
+ggplot(scores, aes(x = Allowed, y = Scored, color = Team)) + 
     geom_abline(slope = 1, intercept = c(0, 0)) +
     geom_point() + 
-    xlim(c(0, max(scores$AllowedPerGame))) + 
-    ylim(c(0, max(scores$ScoredPerGame))) 
-
-ggplot(scores, aes(x = TotalRunsAllowed, y = TotalRunsScored, color = Team)) + 
-    geom_abline(slope = 1, intercept = c(0, 0)) +
-    geom_point() + 
-    xlim(c(0, max(scores$TotalRunsAllowed))) + 
-    ylim(c(0, max(scores$TotalRunsScored))) 
+    xlim(c(0, max(scores$Allowed))) + 
+    ylim(c(0, max(scores$Scored))) + 
+    coord_quickmap()
 ```
 
-## All time statistics
+This figure shows the relationship between the average number of runs a team scores and the number they allow. Points along the black line represent teams that, on average, score an equal number of runs as they allow. Teams above the line score more than they allow and below the line score fewer than they allow. 
+
+<br>
+
+```{r}
+season2 <- season %>% 
+    mutate(Margin = Score - OpponentScore, 
+        # transform margin by sqrt to make the scale nicer
+        Margin = ifelse(Margin < 0, -sqrt(abs(Margin)), sqrt(abs(Margin)))) %>% 
+    group_by(Team) %>% 
+    mutate(Game = 1:n())
+
+ggplot(season2, aes(x = Game, y = reorder(Team, Margin, mean), 
+        fill = Margin)) + 
+    geom_tile(width = 0.9, height = 0.9) + 
+    scale_fill_distiller(type = "div", palette = "RdBu",
+        limits = c(-(max(season2$Margin)), max(season2$Margin))) + 
+    ylab(NULL) + labs(fill = NULL) + 
+    theme(legend.text = element_blank()) + 
+    coord_fixed(ratio = 1)
+```
+
+This figure shows the outcomes of all non-forfeited games from this season. Each square represents a game and color represents the difference between what the scores, where red represents a win and white represents a loss, with darker red meaning a bigger blowout. 
+
+<br>
+
+### All time statistics
 ```{r}
 game_n <- combined %>% 
     select(Date, Field) %>%
@@ -71,17 +103,30 @@ games <- combined %>%
         runfrac = cummean(Score / (Score + OpponentScore))) %>% 
     # highlight teams from this season
     mutate(Highlight = ifelse(Team %in% highlight_teams, Team, "Other")) %>% 
-    mutate(Highlight = factor(Highlight, levels = c(highlight_teams, "Other"))) %>% 
-    arrange(Highlight)
+    mutate(Highlight = factor(Highlight, levels = c(sort(highlight_teams), "Other"))) %>% 
+    arrange(Highlight != "Other")
 
 high <- filter(games, Highlight != "Other")
 ggplot(games, mapping = aes(x = GameN, y = Record, color = Highlight)) + 
     geom_line(aes(group = Team), color = "grey") + 
     geom_line(data = high, aes(group = Team)) + 
-    ggtitle("Complete record")
+    ggtitle("Cumulative win/loss record") + 
+    xlab("Game") + labs(color = NULL)
+```
 
+This figure shows the cumulative win/loss record for all teams, with the teams playing this season highlighted. Games are numbered sequentially starting from the first game of Stranger Danger's first season (summer 2013!). Stranger Danger continues its steady recovery from the painful early seasons. 
+
+<br>
+
+```{r}
 ggplot(games, mapping = aes(x = GameN, y = Margin, color = Highlight)) + 
     geom_line(aes(group = Team), color = "grey") + 
     geom_line(data = high, aes(group = Team)) + 
-    ggtitle("Complete margin")
+    ggtitle("Cumulative average margin") + 
+    xlab("Game") + labs(color = NULL) + 
+    coord_cartesian(ylim = c(-20, 20))
 ```
+
+This figure shows the cumulative average score margin for all teams, with the teams playing this season highlighted. Stranger Danger continues its steady recovery from the painful early seasons. Stranger Danger continues its steady recovery from the painful early seasons. 
+
+<br>
