@@ -36,7 +36,7 @@ scores <- season %>%
         Allowed = round(mean(OpponentScore), 1),
         Margin = round(mean(Score - OpponentScore), 1)) %>% 
     # order by games df
-    arrange(desc(AvgMargin))
+    arrange(desc(Margin))
 
 pander::pander(games)
 ```
@@ -72,7 +72,7 @@ all_time_scores <- all_time %>%
         Allowed = round(mean(OpponentScore), 1),
         Margin = round(mean(Score - OpponentScore), 1)) %>% 
     # order by games df
-    arrange(desc(AvgMargin))
+    arrange(desc(Margin))
 
 pander::pander(all_time_win_loss)
 ```
