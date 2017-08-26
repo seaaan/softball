@@ -1,6 +1,8 @@
 ---
 title: "How to win a game"
-output: html_document
+output: 
+    html_document:
+        theme: sandstone
 ---
 
 ```{r setup, include=FALSE}
@@ -34,6 +36,8 @@ ggplot(no_ties, aes(x = Score, fill = Outcome)) +
 
 This graph shows the distribution of scores for `r nrow(no_ties) / 2` games. The x-axis shows the number of runs scored and the y-axis shows an estimate of the number of games with that many runs scored. The colors indicate whether the outcome was a win or loss. From this graph, you can see that the most common score for the winning team is a bit above 15. The most common score for the losing team is about 6. A few unlucky teams have lost despite scoring up to 25 runs Likewise, some lucky teams have scored only 5 runs but still won! 
 
+<br>
+
 ```{r}
 to_plot <- combined %>% 
     # select wins and losses evenly/randomly
@@ -66,6 +70,8 @@ ggplot(wins, aes(x = Score - OpponentScore)) +
 
 How much do teams usually win by? This graph shows that the single most common margin of victory is only a single run, with at least 70 games in which the winner scored one run more than the losing team. Large margins of victory are generally less common than small ones, and margins of victory above 20 are particularly uncommon. 
 
+<br>
+
 ```{r}
 ggplot(wins, aes(y = Score - OpponentScore, x = Score)) + 
     geom_point() + 
@@ -88,3 +94,5 @@ combined %>%
 ```
 
 How many runs do you need to score to be guaranteed a win? This graph answers that question with the same data as the previous graph. The line indicates what percent of games were won with a given number of runs. For example, with 10 runs, teams won about 25% of the team. At 12-14 runs, about half of games are won. No team has ever lost when they score at least 26 runs or won when they scored fewer than five runs.  
+
+<br>
