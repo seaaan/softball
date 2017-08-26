@@ -1,20 +1,27 @@
 source("helpers.R")
 combined <- get_tidy_game_data()
 
-number_of_games <- 30
+combined <- combined %>% 
+    filter(Year == 2017, Season == "Fall")
 
-teams <- combined %>% 
-    group_by(Team) %>% 
-    count() %>% 
-    arrange(desc(n)) %>% 
-    filter(n >= number_of_games) %>% 
-    .$Team
+teams <- unique(combined$Team) 
+    
+
+
+# number_of_games <- 30
+# 
+# teams <- combined %>% 
+#     group_by(Team) %>% 
+#     count() %>% 
+#     arrange(desc(n)) %>% 
+#     filter(n >= number_of_games) %>% 
+#     .$Team
 
 library(ggraph)
 library(igraph)
 games <- combined %>% 
     filter(Team %in% teams & Opponent %in% teams, Outcome != "Loss") %>% 
-    mutate(Winner = ifelse(Outcome == "Win", Team, "Tie")) %>% 
+    mutate(Winner = ifelse(Outcome == "Win", Team, Opponent)) %>% 
     # ties get doubled bc includes row for each direction
     # so group by Game and only take the first row for each game
     # which will remove this problem
