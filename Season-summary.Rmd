@@ -55,7 +55,7 @@ ggplot(scores, aes(x = Allowed, y = Scored, color = Team)) +
     coord_quickmap()
 ```
 
-This figure shows the relationship between the average number of runs a team scores and the number they allow. Points along the black line represent teams that, on average, score an equal number of runs as they allow. Teams above the line score more than they allow and below the line score fewer than they allow. 
+This figure shows the relationship between the average number of runs a team scores and the number they allow. Points along the black line represent teams that, on average, score an equal number of runs to the number they allow. Teams above the line score more than they allow and below the line score fewer than they allow. 
 
 <br>
 
@@ -71,13 +71,14 @@ ggplot(season2, aes(x = Game, y = reorder(Team, Margin, mean),
         fill = Margin)) + 
     geom_tile(width = 0.9, height = 0.9) + 
     scale_fill_distiller(type = "div", palette = "RdBu",
-        limits = c(-(max(season2$Margin)), max(season2$Margin))) + 
-    ylab(NULL) + labs(fill = NULL) + 
+        limits = c(-(max(season2$Margin)), max(season2$Margin)), 
+        guide = FALSE) + 
+    ylab(NULL) + 
     theme(legend.text = element_blank()) + 
     coord_fixed(ratio = 1)
 ```
 
-This figure shows the outcomes of all non-forfeited games from this season. Each square represents a game and color represents the difference between what the scores, where red represents a win and white represents a loss, with darker red meaning a bigger blowout. 
+This figure shows the outcomes of all non-forfeited games from this season. Each square represents a game and color represents the difference between what the scores, where red represents a win and blue represents a loss, with darker red meaning a bigger blowout. 
 
 <br>
 
@@ -127,6 +128,6 @@ ggplot(games, mapping = aes(x = GameN, y = Margin, color = Highlight)) +
     coord_cartesian(ylim = c(-20, 20))
 ```
 
-This figure shows the cumulative average score margin for all teams, with the teams playing this season highlighted. Stranger Danger continues its steady recovery from the painful early seasons. Stranger Danger continues its steady recovery from the painful early seasons. 
+This figure shows the cumulative average score margin for all teams, with the teams playing this season highlighted. Stranger Danger continues its steady recovery from the painful early seasons.
 
 <br>

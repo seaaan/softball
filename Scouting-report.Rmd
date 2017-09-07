@@ -41,7 +41,7 @@ scores <- season %>%
 pander::pander(games)
 ```
 
-This table shows the outcome of the non-forfeited games played this season (`r THIS_SEASON` `r THIS_YEAR`) by `r COMPETITOR` and Stranger Danger. `r games$Team[1]` is stronger by this metric. 
+This table shows the outcome of the non-forfeited games played this season (`r THIS_SEASON` `r THIS_YEAR`) by `r COMPETITOR` and Stranger Danger. `r games$Team[1]` are stronger by this metric. 
 
 <br>
 
@@ -49,7 +49,7 @@ This table shows the outcome of the non-forfeited games played this season (`r T
 pander::pander(scores)
 ```
 
-This table shows the average number of runs scored and allowed from this season, as well as the average margin (the difference between the number of runs scored and allowed). `r scores$Team[1]` is stronger by this metric. 
+This table shows the average number of runs scored and allowed from this season, as well as the average margin (the difference between the number of runs scored and allowed). `r scores$Team[1]` are stronger by this metric. 
 
 ### All time statistics
 In this section, we'll look at all of the games ever played by Stranger Danger, and all of the games ever played by `r COMPETITOR` during seasons when Stranger Danger was also playing. 
@@ -77,7 +77,7 @@ all_time_scores <- all_time %>%
 pander::pander(all_time_win_loss)
 ```
 
-This table shows the outcome of the non-forfeited games ever played by `r COMPETITOR` and Stranger Danger. `r all_time_win_loss$Team[1]` is stronger by this metric. 
+This table shows the outcome of the non-forfeited games ever played by `r COMPETITOR` and Stranger Danger. `r all_time_win_loss$Team[1]` are stronger by this metric. 
 
 <br>
 
@@ -116,7 +116,7 @@ This figure shows the cumulative percentage of games won across all games played
 pander::pander(all_time_scores)
 ```
 
-This table shows the average number of runs scored and allowed from all seasons, as well as the average margin (the difference between the number of runs scored and allowed). `r all_time_scores$Team[1]` is stronger by this metric. 
+This table shows the average number of runs scored and allowed from all seasons, as well as the average margin (the difference between the number of runs scored and allowed). `r all_time_scores$Team[1]` are stronger by this metric. 
 
 <br>
 
@@ -135,7 +135,7 @@ This figure shows the cumulative average run margin across all games played for 
 Stranger Danger and `r COMPETITOR` have played each other `r filter(combined, Team == "Stranger Danger", Opponent == COMPETITOR) %>% nrow()` times. Stranger Danger won `r filter(combined, Team == "Stranger Danger", Opponent == COMPETITOR) %>% summarise(wins = sum(Outcome == "Win")) %>% .$wins` of those games and `r filter(combined, Team == "Stranger Danger", Opponent == COMPETITOR) %>% summarise(ties = sum(Outcome == "Tie")) %>% .$ties` ended in a tie. 
 
 ### Predicted outcome
-To predict who will win a game between Stranger Danger and `r COMPETITOR`, a number of models are used. Three of the models ("elo", "steph", and "glicko") were developed to predict the outcome of chess matches based on past performance see [here](http://www.glicko.net/research/acjpaper.pdf) for details. Each of these models is run two ways: with the outcome of the game being a win or a loss and with the outcome of the game being the fraction of the total runs scored. Two additional models are used, which are simply a comparison of the two team's total records and margins.  
+To predict who will win a game between Stranger Danger and `r COMPETITOR`, a number of models are used. Three of the models ("elo", "steph", and "glicko") were developed to predict the outcome of chess matches based on past performance (see [here](http://www.glicko.net/research/acjpaper.pdf) for details). Each model is run two ways: with the outcome of the game being a win or a loss and with the outcome of the game being the fraction of the total runs scored. Two additional models are used, which are simply a comparison of the two teams' total records and margins.  
 
 ```{r}
 # convert relative records and runs scored to win probabilities
