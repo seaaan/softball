@@ -13,7 +13,7 @@ combined <- get_tidy_game_data()
 options(tibble.width = Inf)
 THIS_SEASON <- "Fall"
 THIS_YEAR <- 2017
-COMPETITOR <- "The Crows"
+COMPETITOR <- "Hitmen"
 ```
 
 This is a scouting report on `r COMPETITOR`. The goal is to evaluate how strong they are compared to Stranger Danger, so the focus is on the current season, but earlier data are also included. Forfeits are not included because they don't provide information about a team's strength.
