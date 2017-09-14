@@ -1,7 +1,7 @@
 # Load helper functions and R packages. 
 source("R/helpers.R")
 
-# Rebuild the data from the source HTML files to ensure it's up to data. 
+# Rebuild the data from the source HTML files to ensure it's up to date. 
 source("R/scrape-data.R")
 
 # Update the models based on the latest game outcomes.
